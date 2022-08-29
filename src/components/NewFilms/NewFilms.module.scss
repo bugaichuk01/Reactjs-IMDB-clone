@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 30px;
+  row-gap: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+}
