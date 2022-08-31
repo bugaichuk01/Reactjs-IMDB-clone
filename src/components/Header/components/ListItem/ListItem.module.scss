@@ -1,0 +1,27 @@
+.list_container {
+  display: flex;
+}
+
+.image_container {
+  position: relative;
+  width: 48px;
+  height: 71px;
+  padding: 10px 10px 0 10px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.title {
+  font-size: var(--type-body-size);
+  font-weight: var(--type-bodyBold-weight);
+}
+
+.info {
+  font-size: var(--type-bodySmall-size);
+  font-weight: var(--type-bodyBold-weight);
+  color: var(--color-grey)
+}
