@@ -1,0 +1,24 @@
+.search_list_container {
+  position: absolute;
+}
+
+.search_list {
+  width: 600px;
+  margin-top: 54px;
+  margin-left: 60px;
+  border-radius: var(--content-radius);
+  text-align: start;
+  padding: 0;
+  background: #1f1f1f;
+  color: var(--color-white);
+  font-size: var(--type-body-size);
+  font-weight: var(--type-bodyBold-weight);
+}
+
+.no_results {
+  padding: 40px;
+  text-align: center;
+  color: var(--color-grey);
+  font-size: var(--type-body-size);
+  font-weight: var(--type-bodyNormal-weight);
+}
