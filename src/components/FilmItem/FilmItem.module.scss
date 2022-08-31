@@ -10,9 +10,8 @@
 
 .icon {
   color: var(--color-yellow);
-  height: 0.8em;
-  width: 1em;
-  margin-right: 0.15em;
+  font-size: 12px;
+  margin-right: 0.4em;
 }
 
 .rating-group {
@@ -26,8 +25,8 @@
 
 .rating {
   color: #ffffffb3;
-  font-weight: 500;
-  font-size: 1rem;
+  font-weight: var(--type-bodyBold-weight);
+  font-size:  var(--type-body-size);
   line-height: 1.5rem;
 }
 
@@ -35,6 +34,6 @@
   padding: 0 0.5rem;
   text-align: start;
   display: flex;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: var(--type-body-size);
+  font-weight: var(--type-bodyNormal-weight);
 }
