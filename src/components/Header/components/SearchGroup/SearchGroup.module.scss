@@ -1,0 +1,39 @@
+.container {
+  position: relative;
+  display: inline-block;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding: 8px 12px;
+  }
+
+  li:hover {
+    background-color: rgba(0, 0, 0, 0.14);
+    cursor: pointer;
+  }
+}
+
+.button {
+  padding: 0;
+  width: 100px;
+  border: 0;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  outline: 0;
+  font-size: 20px;
+}
+
+.label_icon {
+  margin-right: 0.3rem;
+  margin-left: 0.1rem;
+}
+
+.search_panel {
+  display: flex;
+}
