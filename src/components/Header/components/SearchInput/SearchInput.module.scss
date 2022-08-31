@@ -1,0 +1,23 @@
+.search {
+  min-height: 38px;
+  outline: none;
+  border: none;
+  width: 600px;
+  background: var(--color-white);
+  border-radius: 0 var(--content-radius) var(--content-radius) 0;
+  font-weight: var(--type-bodyBold-weight);
+  color: var(--color-dark-grey);
+  font-size: var(--type-bodySmall-size);
+  padding-left: 10px;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 1.2em;
+  width: 1.2em;
+  margin-right: 10px;
+  border-radius: 50em;
+  background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-square.svg) no-repeat 50% 50%;
+  background-size: contain;
+  cursor: pointer;
+}
