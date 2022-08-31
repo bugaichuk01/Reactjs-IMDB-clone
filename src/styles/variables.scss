@@ -4,15 +4,20 @@
   --content-width: 1230px;
   --container-offset: 15px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
-  --content-radius: 4px;
+  --content-radius: 5px;
+
+  //font
+  --type-bodyNormal-weight: 400;
+  --type-bodyBold-weight: 500;
+  --type-bodySmall-size: 0.875rem;
+  --type-body-size: 1rem;
 
   // colors
   --color-white: #fff;
   --color-black: #000;
   --color-yellow: #f5c518;
-  --color-green: #00a340;
   --color-dark: #141414;
   --color-light-dark: #1a1a1a;
-  --color-primary: #005382;
-  --color-dark-primary: #003F63;
+  --color-grey: #9b9b9b;
+  --color-dark-grey: #606060;
 }
