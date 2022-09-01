@@ -6,7 +6,7 @@ import {SearchInput} from "../SearchInput/SearchInput";
 export const SearchGroup = () => {
 
     return (
-        <div className={styles.search_panel}>
+        <div className={styles.search_group}>
             <DropDown />
             <SearchInput />
         </div>
