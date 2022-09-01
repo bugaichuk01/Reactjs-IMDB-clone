@@ -1,5 +1,5 @@
 import React from 'react';
-import {IMovie} from "../../_types/IMovie";
+import {IMovie} from "../../types/IMovie";
 import styles from './FilmItem.module.scss'
 import cn from 'classnames';
 

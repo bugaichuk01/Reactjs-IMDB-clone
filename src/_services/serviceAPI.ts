@@ -1,7 +1,7 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
-import {IMovie, IMovies} from "../_types/IMovie";
+import {IMovie, IMovies} from "../types/IMovie";
 import {getCurrentYear} from "../_helpers/getCurrentYear";
-import {ISearchQuery} from "../_types/IQuery";
+import {ISearchQuery} from "../types/IQuery";
 
 export const serviceAPI = createApi({
     reducerPath: 'serviceAPI',

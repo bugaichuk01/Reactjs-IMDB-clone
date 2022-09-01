@@ -2,8 +2,9 @@ import React, {useEffect} from 'react';
 import {useTypedSelector} from "../../../../_hooks/useTypedSelector";
 import {useGetFilmsBySearchQuery} from "../../../../_services/serviceAPI";
 import styles from './SearchList.module.scss';
-import {IMovie} from "../../../../_types/IMovie";
+import {IMovie} from "../../../../types/IMovie";
 import {ListItem} from "../ListItem/ListItem";
+import ReactLoading from 'react-loading';
 
 interface SearchListProps {
     debouncedValue: string
@@ -15,7 +16,7 @@ export const SearchList: React.FC<SearchListProps> = ({debouncedValue}) => {
 
     useEffect(() => {
         refetch();
-    }, [debouncedValue])
+    }, [debouncedValue, refetch])
 
     return (
         <div className={styles.search_list_container}>
@@ -29,14 +30,11 @@ export const SearchList: React.FC<SearchListProps> = ({debouncedValue}) => {
                                 ))}
                             </>
                         ) : (
-                            <div className={styles.loader}>
-                                loading
-                                {/*<Spinner variant='dark' size={SpinnerSizes.medium}/>*/}
-                            </div>
+                            <p className={styles.no_results}>По вашему запросу ничего не найдено</p>
                         )}
                     </>
                 ) : (
-                    <p className={styles.no_results}>По вашему запросу ничего не найдено</p>
+                    <ReactLoading className={styles.loader} type='spin' height={40} width={40}/>
                 )}
             </div>
         </div>
