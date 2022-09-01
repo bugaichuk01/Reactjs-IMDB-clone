@@ -1,5 +1,9 @@
 .list_container {
   display: flex;
+
+  &:last-child {
+    padding-bottom: 10px;
+  }
 }
 
 .image_container {
