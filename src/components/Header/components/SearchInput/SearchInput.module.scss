@@ -12,12 +12,35 @@
 }
 
 input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  height: 1.2em;
-  width: 1.2em;
-  margin-right: 10px;
-  border-radius: 50em;
-  background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-square.svg) no-repeat 50% 50%;
-  background-size: contain;
+  display: none;
+}
+
+.closeBtn {
+  position: absolute;
+  border: none;
+  outline: none;
   cursor: pointer;
+  background-color: white;
+  top: 50%;
+  margin-left: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    color: var(--color-dark-grey);
+  }
 }
