@@ -5,25 +5,10 @@
   width: 100%;
   z-index: 10000;
   background-color: var(--color-dark);
-
-  @media (max-width: 768px) {
-    background-color: var(--color-light-dark);
-  }
 }
 
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  @media (max-width: 1280px) {
-    padding-left: 35px;
-    padding-right: 35px;
-  }
-
-  @media (max-width: 768px) {
-    display: flex;
-    justify-content: flex-start;
-    padding: 17px var(--container-offset);
-  }
 }
