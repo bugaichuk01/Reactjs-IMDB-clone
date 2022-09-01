@@ -44,6 +44,12 @@ export const SearchInput = () => {
                     placeholder='Поиск...'
                     onClick={handleSearch}
                 />
+                <button
+                    className={cn(styles.closeBtn, debouncedValue && styles.active)}
+                    onClick={handleClearInput}
+                >
+                    <FiX />
+                </button>
             </form>
             {isActive && <SearchList debouncedValue={debouncedValue}/>}
         </>
