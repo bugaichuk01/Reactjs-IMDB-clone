@@ -22,3 +22,11 @@
   font-size: var(--type-body-size);
   font-weight: var(--type-bodyNormal-weight);
 }
+
+.loader {
+  padding: 100px;
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
