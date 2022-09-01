@@ -34,8 +34,8 @@ export const DropDown: React.FC = () => {
     };
 
     return (
-        <div className={styles.dropdown_main}>
-            <div className={styles.dropdown_header} onClick={toggle}>
+        <div className={styles.dropdown_main} onClick={toggle}>
+            <div className={styles.dropdown_header}>
                 {currentOption.label}
                 {isOpen ? <FiChevronUp/> : <FiChevronDown/>}
             </div>
