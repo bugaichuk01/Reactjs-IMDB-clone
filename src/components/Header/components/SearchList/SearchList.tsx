@@ -20,12 +20,12 @@ export const SearchList: React.FC<SearchListProps> = ({debouncedValue}) => {
     return (
         <div className={styles.search_list_container}>
             <div className={styles.search_list}>
-                {data?.items?.length ? (
+                {!isFetching ? (
                     <>
-                        {!isFetching ? (
+                        {data?.items?.length ? (
                             <>
                                 {data && data.items.slice(0, 8).map((item: IMovie) => (
-                                    <ListItem key={item.imdbId} item={item}/>
+                                    <ListItem key={item.kinopoiskId} item={item}/>
                                 ))}
                             </>
                         ) : (
