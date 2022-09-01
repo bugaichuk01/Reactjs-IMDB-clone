@@ -5,6 +5,8 @@ import {useTypedSelector} from "../../../../_hooks/useTypedSelector";
 import {useActions} from "../../../../_hooks/useActions";
 import {SearchList} from "../SearchList/SearchList";
 import {useOnClickOutside} from "usehooks-ts";
+import cn from "classnames";
+import {FiX} from "react-icons/fi";
 
 export const SearchInput = () => {
     const {setSearch, toggleSearch} = useActions();
@@ -24,6 +26,11 @@ export const SearchInput = () => {
         handleSearch();
     }
 
+    const handleClearInput = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        setSearch('');
+    }
+
     const isActive = isOpen && debouncedValue;
 
     return (
@@ -39,45 +46,6 @@ export const SearchInput = () => {
                 />
             </form>
             {isActive && <SearchList debouncedValue={debouncedValue}/>}
-            {/* <TextField
-                    className={styles.search}
-                    ref={inputRef}
-                    variant='dark'
-                    type="search"
-                    value={value}
-                    onChange={handleChange}
-                    placeholder='Поиск...'
-                    onClick={() => setVisible(true)}
-                />
-                <ButtonBase
-                    ripple
-                    type='button'
-                    className={styles.hideSearch}
-                    onClick={() => setVisible(false)}
-                >
-                    <FiChevronLeft />
-                </ButtonBase>
-                <ButtonBase
-                    ripple
-                    type='button'
-                    className={classNames(styles.closeBtn, value && styles.active)}
-                    onClick={handleClearInput}
-                >
-                    <FiX />
-                </ButtonBase>
-                <ButtonBase
-                    ripple
-                    className={styles.searchBtn}
-                    disabled={!value.length}
-                    onClick={submitForm}
-                >
-                    <FiSearch />
-                </ButtonBase>
-                {isActive && <SearchList value={debouncedValue} />}
-            </form>
-            <ButtonBase onClick={openSearch} className={styles.openSearch}>
-                <FiSearch />
-            </ButtonBase>*/}
         </>
     );
 }
