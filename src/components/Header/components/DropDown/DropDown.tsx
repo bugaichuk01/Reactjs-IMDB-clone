@@ -46,7 +46,7 @@ export const DropDown: React.FC = () => {
                             const isCurrentOption = currentOption.label === option.label;
 
                             return (
-                                <li className={styles.dropdown_list_item} onClick={onOptionClicked(option)} key={Math.random()}>
+                                <li className={styles.dropdown_list_item} onClick={onOptionClicked(option)} key={option.label}>
                                     <span className={cn(styles.option_icon, isCurrentOption && styles.active_item)}>{option.icon}</span>
                                     <span className={cn(styles.option_label, isCurrentOption && styles.active_item)}>{option.label}</span>
                                 </li>
