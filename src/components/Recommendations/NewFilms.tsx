@@ -1,6 +1,6 @@
 import React from 'react';
 import {useGetNewFilmsQuery} from "../../_services/serviceAPI";
-import styles from './Recommendations.scss';
+import styles from './Recommendations.module.scss';
 import cn from 'classnames';
 import {FilmItem} from "../FilmItem/FilmItem";
 
