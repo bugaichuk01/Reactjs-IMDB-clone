@@ -1,11 +1,11 @@
 import React from 'react';
-import {useGetNewFilmsQuery} from "../../_services/serviceAPI";
-import styles from './Recommendations.scss';
+import {useGetNewSeriesQuery} from "../../_services/serviceAPI";
+import styles from './Recommendations.scss'
 import cn from 'classnames';
 import {FilmItem} from "../FilmItem/FilmItem";
 
-export const NewFilms = () => {
-    const {data} = useGetNewFilmsQuery();
+export const NewSeries = () => {
+    const {data} = useGetNewSeriesQuery();
 
     return (
         <div className={cn('container', styles.container)}>
@@ -17,4 +17,3 @@ export const NewFilms = () => {
         </div>
     );
 }
-
