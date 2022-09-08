@@ -23,6 +23,14 @@ export const serviceAPI = createApi({
                 }
             })
         }),
+        getNewSeries: build.query<IMovies, void>({
+            query: () => ({
+                url: `/films?type=TV_SERIES&order=NUM_VOTE&yearFrom=${getCurrentYear()}`,
+                headers: {
+                    'X-API-KEY': `${process.env.REACT_APP_API_KEY}`
+                }
+            })
+        }),
         getFilmsBySearch: build.query<IMovies, ISearchQuery>({
             query: ({type, keyword}) => ({
                 url: `/films?type=${type}&keyword=${keyword}`,
@@ -36,6 +44,7 @@ export const serviceAPI = createApi({
 export const {
     useGetFilmByIdQuery,
     useGetNewFilmsQuery,
+    useGetNewSeriesQuery,
     useGetFilmsBySearchQuery
 } = serviceAPI
 
