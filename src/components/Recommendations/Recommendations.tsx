@@ -9,32 +9,34 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import {FaChevronRight} from "react-icons/fa";
 import {FaChevronLeft} from "react-icons/fa";
+import {deleteTrashFilms} from "../../_helpers/deleteTrashFilms";
 
 interface RecommendationsTypes {
     data: IMovies | undefined;
     title: string
 }
+
 interface renderButtonTypes {
     isDisabled: boolean
 }
 
 const responsive = {
-    0: { items: 1 },
-    568: { items: 2 },
-    1024: { items: 6 },
+    0: {items: 1},
+    568: {items: 2},
+    1024: {items: 6},
 };
 
 export const Recommendations: React.FC<RecommendationsTypes> = ({data, title}) => {
 
-    const renderPrevButton = ({ isDisabled }: renderButtonTypes) => {
+    const renderPrevButton = ({isDisabled}: renderButtonTypes) => {
         return <div className={isDisabled ? styles.disabled : cn(styles.thumb, styles.thumb_left)}>
-            <FaChevronLeft />
+            <FaChevronLeft/>
         </div>
     };
 
-    const renderNextButton = ({ isDisabled }: renderButtonTypes) => {
+    const renderNextButton = ({isDisabled}: renderButtonTypes) => {
         return <div className={isDisabled ? styles.disabled : cn(styles.thumb, styles.thumb_right)}>
-            <FaChevronRight />
+            <FaChevronRight/>
         </div>
     };
 
@@ -42,12 +44,12 @@ export const Recommendations: React.FC<RecommendationsTypes> = ({data, title}) =
         <div className={cn('container', styles.container)}>
             <div className={styles.top}>
                 <h1>{title}</h1>
-                <UiButton style={styles.button} text='See all'/>
+                <UiButton style={styles.button} text='Смотреть все'/>
             </div>
 
             <AliceCarousel
                 mouseTracking
-                items={data?.items.slice(0, 10).map((item) => (
+                items={deleteTrashFilms(data?.items).map((item) => (
                     <FilmItem key={item.imdbId} item={item}/>
                 ))}
                 responsive={responsive}
