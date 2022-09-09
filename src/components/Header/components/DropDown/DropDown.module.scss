@@ -7,7 +7,7 @@
 
 .dropdown_header {
   border-radius: var(--content-radius) 0 0 var(--content-radius);
-  font-weight: var(--type-bodyBold-weight);
+  font-weight: var(--type-bodyMedium-weight);
   height: 100%;
   cursor: pointer;
   display: flex;
@@ -36,7 +36,7 @@
   background: #1f1f1f;
   color: var(--color-white);
   font-size: var(--type-body-size);
-  font-weight: var(--type-bodyBold-weight);
+  font-weight: var(--type-bodyMedium-weight);
 }
 
 .active_item {
