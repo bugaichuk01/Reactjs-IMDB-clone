@@ -1,11 +1,17 @@
-.list-item {
+.list_item {
   color: var(--color-white);
   background-color: var(--color-light-dark);
   border-radius: 0 0 var(--content-radius) var(--content-radius);
   padding-bottom: 1rem;
-  img {
-    height: 80%;
-  }
+  margin: 10px;
+  list-style: none;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
 .icon {
@@ -14,7 +20,7 @@
   margin-right: 0.4em;
 }
 
-.rating-group {
+.rating_group {
   display: flex;
   align-items: center;
   padding: 0 0.5rem;
@@ -31,9 +37,10 @@
 }
 
 .name {
+  min-height: 82px;
+  display: block;
   padding: 0 0.5rem;
   text-align: start;
-  display: flex;
   font-size: var(--type-body-size);
   font-weight: var(--type-bodyNormal-weight);
 }
