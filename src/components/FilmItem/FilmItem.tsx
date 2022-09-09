@@ -17,7 +17,7 @@ export const FilmItem: React.FC<FilmItemProps> = ({item}) => {
                     <FaStar className={styles.icon}/>
                     <span className={styles.rating}>{item.ratingKinopoisk}</span>
                 </div>
-                <span className={styles.name}>{slicer(item.nameRu, 37)}</span>
+                <span className={styles.name}>{slicer(item.nameRu, 42)}</span>
             </div>
         </li>
     );
