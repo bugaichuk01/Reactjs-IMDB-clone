@@ -1,17 +1,15 @@
 import React from 'react';
-import styles from "../Recommendations/Recommendations.module.scss";
+import styles from "../Popular/Popular.module.scss";
 import cn from "classnames";
 import {FaChevronLeft, FaChevronRight} from "react-icons/fa";
 import AliceCarousel from "react-alice-carousel";
-import {IMovie} from "../../types/IMovie";
-import {FilmItem} from "../FilmItem/FilmItem";
 
 interface renderButtonTypes {
     isDisabled: boolean
 }
 
-interface RecommendationsSliderTypes {
-    data: IMovie[] | undefined;
+interface SliderTypes {
+    data: JSX.Element[] | undefined;
 }
 
 const responsive = {
@@ -20,7 +18,7 @@ const responsive = {
     1024: {items: 6},
 };
 
-export const RecommendationsSlider: React.FC<RecommendationsSliderTypes> = ({data}) => {
+export const Slider: React.FC<SliderTypes> = ({data}) => {
     const renderPrevButton = ({isDisabled}: renderButtonTypes) => {
         return <div className={isDisabled ? styles.disabled : cn(styles.thumb, styles.thumb_left)}>
             <FaChevronLeft/>
@@ -36,9 +34,7 @@ export const RecommendationsSlider: React.FC<RecommendationsSliderTypes> = ({dat
     return (
         <AliceCarousel
             mouseTracking
-            items={data?.map((item) => (
-                <FilmItem key={item.imdbId} item={item}/>
-            ))}
+            items={data}
             responsive={responsive}
             controlsStrategy="alternate"
             disableDotsControls={true}
