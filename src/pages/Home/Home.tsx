@@ -1,6 +1,6 @@
 import React from 'react';
 import {Layout} from "../../components/Layout/Layout";
-import {useGetNewFilmsQuery, useGetNewSeriesQuery, useGetPremiersQuery} from "../../_services/serviceAPI";
+import {useGetNewFilmsQuery, useGetNewSeriesQuery} from "../../_services/serviceAPI";
 import {Recommendations} from "../../components/Recommendations/Recommendations";
 
 export const Home = () => {
