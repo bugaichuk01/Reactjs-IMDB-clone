@@ -7,13 +7,10 @@ export const Home = () => {
     const films = useGetNewFilmsQuery();
     const series = useGetNewSeriesQuery();
 
-
     return (
         <Layout>
-            <Recommendations data={films.data} title='New films' />
-            <Recommendations data={series.data} title='New series' />
+            <Recommendations data={films.data} title={'Новые фильмы'} />
+            <Recommendations data={series.data} title={'Новые сериалы'} />
         </Layout>
     );
 }
-
-export default Home;
