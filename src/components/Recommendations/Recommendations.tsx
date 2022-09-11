@@ -3,7 +3,6 @@ import styles from './Recommendations.module.scss';
 import cn from 'classnames';
 import {UiButton} from "../UI/UIButton/UIButton";
 import {IMovies} from "../../types/IMovie";
-import 'react-alice-carousel/lib/alice-carousel.css';
 import {RecommendationsSlider} from "../RecommendationsSlider/RecommendationsSlider";
 import {deleteTrashFilms} from "../../_helpers/deleteTrashFilms";
 
