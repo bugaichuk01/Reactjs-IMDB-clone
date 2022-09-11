@@ -1,17 +1,18 @@
 import React from 'react';
-import styles from './Recommendations.module.scss';
+import styles from './Popular.module.scss';
 import cn from 'classnames';
 import {UiButton} from "../UI/UIButton/UIButton";
 import {IMovies} from "../../types/IMovie";
-import {RecommendationsSlider} from "../RecommendationsSlider/RecommendationsSlider";
+import {Slider} from "../Slider/Slider";
 import {deleteTrashFilms} from "../../_helpers/deleteTrashFilms";
+import {FilmItem} from "../FilmItem/FilmItem";
 
-interface RecommendationsTypes {
+interface PopularTypes {
     data: IMovies | undefined;
     title: string
 }
 
-export const Recommendations: React.FC<RecommendationsTypes> = ({data, title}) => {
+export const Popular: React.FC<PopularTypes> = ({data, title}) => {
 
     return (
         <div className={cn('container', styles.container)}>
@@ -20,7 +21,12 @@ export const Recommendations: React.FC<RecommendationsTypes> = ({data, title}) =
                 <UiButton style={styles.button} text='Смотреть все'/>
             </div>
 
-            <RecommendationsSlider data={deleteTrashFilms(data?.items)}/>
+            <Slider
+                data=
+                    {deleteTrashFilms(data?.items)?.map((item) => (
+                        <FilmItem key={item.imdbId} item={item}/>
+                    ))}
+            />
         </div>
     );
 }
