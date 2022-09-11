@@ -44,6 +44,8 @@ export const RecommendationsSlider: React.FC<RecommendationsSliderTypes> = ({dat
             disableDotsControls={true}
             renderPrevButton={renderPrevButton}
             renderNextButton={renderNextButton}
+            infinite={true}
+            paddingRight={10}
         />
     );
 }
