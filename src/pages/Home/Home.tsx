@@ -1,6 +1,6 @@
 import React from 'react';
 import {Layout} from "../../components/Layout/Layout";
-import {useGetNewFilmsQuery, useGetNewSeriesQuery} from "../../_services/serviceAPI";
+import {useGetNewFilmsQuery, useGetNewSeriesQuery, useGetPremiersQuery} from "../../_services/serviceAPI";
 import {Recommendations} from "../../components/Recommendations/Recommendations";
 
 export const Home = () => {
@@ -9,8 +9,8 @@ export const Home = () => {
 
     return (
         <Layout>
-            <Recommendations data={films.data} title={'Новые фильмы'} />
-            <Recommendations data={series.data} title={'Новые сериалы'} />
+            <Recommendations data={films.data} title={'Популярные фильмы текущего года'} />
+            <Recommendations data={series.data} title={'Популярные сериалы текущего года'} />
         </Layout>
     );
 }
