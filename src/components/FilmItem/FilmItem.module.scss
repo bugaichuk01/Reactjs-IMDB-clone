@@ -37,10 +37,15 @@
 }
 
 .name {
-  min-height: 82px;
+  min-height: 40px;
   display: block;
   padding: 0 0.5rem;
   text-align: start;
   font-size: var(--type-bodySmall-size);
   font-weight: var(--type-bodyRegular-weight);
+
+  -webkit-line-clamp: 2; /* Число отображаемых строк */
+  display: -webkit-box; /* Включаем флексбоксы */
+  -webkit-box-orient: vertical; /* Вертикальная ориентация */
+  overflow: hidden; /* Обрезаем всё за пределами блока */
 }
