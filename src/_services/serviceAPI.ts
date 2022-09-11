@@ -1,5 +1,6 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {getCurrentYear} from "../_helpers/getCurrentYear";
+import {getCurrentMonth} from "../_helpers/getCurrentMonth";
 import {IMovie, IMovies} from "../types/IMovie";
 import {ISearchQuery} from "../types/IQuery";
 
@@ -11,7 +12,7 @@ export const serviceAPI = createApi({
             query: (id) => ({
                 url: `/films/${id}`,
                 headers: {
-                    'X-API-KEY': `${process.env.REACT_APP_API_KEY}`
+                    'X-API-KEY': `${process.env.REACT_APP_API_KEY_SECOND}`
                 }
             })
         }),
@@ -19,7 +20,7 @@ export const serviceAPI = createApi({
             query: () => ({
                 url: `/films?type=FILM&order=NUM_VOTE&yearFrom=${getCurrentYear()}`,
                 headers: {
-                    'X-API-KEY': `${process.env.REACT_APP_API_KEY}`
+                    'X-API-KEY': `${process.env.REACT_APP_API_KEY_SECOND}`
                 }
             })
         }),
@@ -27,15 +28,15 @@ export const serviceAPI = createApi({
             query: () => ({
                 url: `/films?type=TV_SERIES&order=NUM_VOTE&yearFrom=${getCurrentYear()}`,
                 headers: {
-                    'X-API-KEY': `${process.env.REACT_APP_API_KEY}`
+                    'X-API-KEY': `${process.env.REACT_APP_API_KEY_SECOND}`
                 }
             })
         }),
         getPremiers: build.query<IMovies, void>({
             query: () => ({
-                url: `/films/premieres?year=2022&month=OCTOBER`,
+                url: `/films/premieres?year=${getCurrentYear()}&month=${getCurrentMonth()}`,
                 headers: {
-                    'X-API-KEY': `${process.env.REACT_APP_API_KEY}`
+                    'X-API-KEY': `${process.env.REACT_APP_API_KEY_SECOND}`
                 }
             })
         }),
@@ -43,7 +44,7 @@ export const serviceAPI = createApi({
             query: ({type, keyword}) => ({
                 url: `/films?type=${type}&keyword=${keyword}`,
                 headers: {
-                    'X-API-KEY': `${process.env.REACT_APP_API_KEY}`
+                    'X-API-KEY': `${process.env.REACT_APP_API_KEY_SECOND}`
                 }
             })
         })
