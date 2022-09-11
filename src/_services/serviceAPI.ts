@@ -1,6 +1,6 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
-import {IMovie, IMovies} from "../types/IMovie";
 import {getCurrentYear} from "../_helpers/getCurrentYear";
+import {IMovie, IMovies} from "../types/IMovie";
 import {ISearchQuery} from "../types/IQuery";
 
 export const serviceAPI = createApi({
@@ -33,7 +33,7 @@ export const serviceAPI = createApi({
         }),
         getPremiers: build.query<IMovies, void>({
             query: () => ({
-                url: `/films/top?type=TOP_AWAIT_FILMS`,
+                url: `/films/premieres?year=2022&month=OCTOBER`,
                 headers: {
                     'X-API-KEY': `${process.env.REACT_APP_API_KEY}`
                 }
@@ -49,6 +49,7 @@ export const serviceAPI = createApi({
         })
     })
 })
+
 export const {
     useGetFilmByIdQuery,
     useGetNewFilmsQuery,
