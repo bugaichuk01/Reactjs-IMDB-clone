@@ -1,21 +1,18 @@
 import React from 'react';
 import {Layout} from "../../components/Layout/Layout";
-import {useGetNewFilmsQuery, useGetNewSeriesQuery, useGetPremiersQuery} from "../../_services/serviceAPI";
+import {useGetPopularFilmsQuery, useGetPopularSeriesQuery} from "../../_services/serviceAPI";
 import {Popular} from "../../components/Popular/Popular";
-import {FilmsGroup} from "../../components/FilmsGroup/FilmsGroup";
+import {Recommendations} from "../../components/Recommendations/Recommendations";
 
 export const Home = () => {
-    const films = useGetNewFilmsQuery();
-    const series = useGetNewSeriesQuery();
-    const premiers = useGetPremiersQuery();
+    const films = useGetPopularFilmsQuery();
+    const series = useGetPopularSeriesQuery();
 
     return (
         <Layout>
-            {/*
             <Popular data={films.data} title={'Популярные фильмы текущего года'}/>
+            <Recommendations/>
             <Popular data={series.data} title={'Популярные сериалы текущего года'}/>
-            */}
-            <FilmsGroup data={premiers.data} title='Цифровые релизы этого месяца'/>
         </Layout>
     );
 }
