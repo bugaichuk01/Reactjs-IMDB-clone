@@ -1,0 +1,30 @@
+.title {
+  line-height: 2.5rem;
+  letter-spacing: .00735em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--color-yellow);
+  text-align: start;
+}
+
+.editors_pick {
+  max-height: 2.4em;
+  overflow: hidden;
+  font-size: 24px;
+  border: none;
+  padding-left: 0.75rem;
+  position: relative;
+
+  &:before {
+    background: var(--color-yellow);
+    border-radius: var(--content-radius);
+    content: "";
+    margin-left: -0.75rem;
+    align-self: flex-start;
+    position: absolute;
+    height: 100%;
+    width: 4px;
+  }
+}
