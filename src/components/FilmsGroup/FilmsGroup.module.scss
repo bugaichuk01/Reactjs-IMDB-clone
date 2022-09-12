@@ -1,0 +1,19 @@
+.wrapper {
+  max-width: 350px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+.films {
+  height: 80%;
+  display: flex;
+}
+
+.description {
+  color: white;
+  font-size: 1.1rem;
+  padding-top: 10px;
+  align-self: start;
+}
