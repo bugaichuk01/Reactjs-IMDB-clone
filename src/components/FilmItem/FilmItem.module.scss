@@ -2,7 +2,7 @@
   color: var(--color-white);
   background-color: var(--color-light-dark);
   border-radius: 0 0 var(--content-radius) var(--content-radius);
-  padding-bottom: 1rem;
+  padding-bottom: var(--type-body-size);
   margin-right: 10px;
   list-style: none;
 }
@@ -16,14 +16,13 @@
 
 .icon {
   color: var(--color-yellow);
-  font-size: 12px;
+  font-size: var(--type-body-size);
   margin-right: 0.4em;
 }
 
 .rating_group {
   display: flex;
   align-items: center;
-  padding: 0 0.5rem;
   position: relative;
   min-height: 36px;
   margin-bottom: 0.25rem;
@@ -33,15 +32,17 @@
   color: #ffffffb3;
   font-weight: var(--type-bodyMedium-weight);
   font-size:  var(--type-bodySmall-size);
-  line-height: 1.5rem;
+}
+
+.bottom {
+  padding: 0 0.5rem;
 }
 
 .name {
-  min-height: 40px;
+  min-height: 44px;
   display: block;
-  padding: 0 0.5rem;
   text-align: start;
-  font-size: var(--type-bodySmall-size);
+  font-size: var(--type-body-size);
   font-weight: var(--type-bodyRegular-weight);
 
   -webkit-line-clamp: 2; /* Число отображаемых строк */
