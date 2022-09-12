@@ -47,6 +47,7 @@ export interface IMovie {
 
 export interface IMovies {
     items: IMovie[];
+    films?: IMovie[];
     total: number;
     totalPage: number;
 }
