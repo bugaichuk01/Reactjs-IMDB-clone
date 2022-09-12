@@ -16,7 +16,7 @@ export const serviceAPI = createApi({
                 }
             })
         }),
-        getNewFilms: build.query<IMovies, void>({
+        getPopularFilms: build.query<IMovies, void>({
             query: () => ({
                 url: `/films?type=FILM&order=NUM_VOTE&yearFrom=${getCurrentYear()}`,
                 headers: {
@@ -24,7 +24,7 @@ export const serviceAPI = createApi({
                 }
             })
         }),
-        getNewSeries: build.query<IMovies, void>({
+        getPopularSeries: build.query<IMovies, void>({
             query: () => ({
                 url: `/films?type=TV_SERIES&order=NUM_VOTE&yearFrom=${getCurrentYear()}`,
                 headers: {
@@ -35,6 +35,30 @@ export const serviceAPI = createApi({
         getPremiers: build.query<IMovies, void>({
             query: () => ({
                 url: `/films/premieres?year=${getCurrentYear()}&month=${getCurrentMonth()}`,
+                headers: {
+                    'X-API-KEY': `${process.env.REACT_APP_API_KEY_SECOND}`
+                }
+            })
+        }),
+        getTopAwaitFilms: build.query<IMovies, void>({
+            query: () => ({
+                url: `/films/top?type=TOP_AWAIT_FILMS`,
+                headers: {
+                    'X-API-KEY': `${process.env.REACT_APP_API_KEY_SECOND}`
+                }
+            })
+        }),
+        getPopularMiniSeries: build.query<IMovies, void>({
+            query: () => ({
+                url: `/films?order=NUM_VOTE&type=MINI_SERIES&yearFrom=${getCurrentYear()}`,
+                headers: {
+                    'X-API-KEY': `${process.env.REACT_APP_API_KEY_SECOND}`
+                }
+            })
+        }),
+        getTopFilms: build.query<IMovies, void>({
+            query: () => ({
+                url: `/films/top?type=TOP_250_BEST_FILMS`,
                 headers: {
                     'X-API-KEY': `${process.env.REACT_APP_API_KEY_SECOND}`
                 }
@@ -53,10 +77,13 @@ export const serviceAPI = createApi({
 
 export const {
     useGetFilmByIdQuery,
-    useGetNewFilmsQuery,
-    useGetNewSeriesQuery,
     useGetFilmsBySearchQuery,
+    useGetPopularFilmsQuery,
+    useGetPopularSeriesQuery,
     useGetPremiersQuery,
+    useGetTopAwaitFilmsQuery,
+    useGetPopularMiniSeriesQuery,
+    useGetTopFilmsQuery
 } = serviceAPI
 
 
