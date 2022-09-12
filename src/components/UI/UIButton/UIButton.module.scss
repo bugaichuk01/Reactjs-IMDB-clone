@@ -1,6 +1,6 @@
 .button {
   outline: none;
-  border-radius: 5px;
+  border-radius: var(--content-radius);
   font-size: var(--type-body-size);
   font-weight: var(--type-bodyBold-weight);
   color: var(--color-black);
