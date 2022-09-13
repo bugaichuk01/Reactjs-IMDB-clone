@@ -1,8 +1,8 @@
 import React from 'react';
 import {Layout} from "../../components/Layout/Layout";
-import {useGetPopularFilmsQuery, useGetPopularSeriesQuery} from "../../_services/serviceAPI";
 import {Popular} from "../../components/Popular/Popular";
 import {Recommendations} from "../../components/Recommendations/Recommendations";
+import {useGetPopularFilmsQuery, useGetPopularSeriesQuery} from "../../_services/serviceAPI";
 
 export const Home = () => {
     const films = useGetPopularFilmsQuery();
@@ -10,9 +10,9 @@ export const Home = () => {
 
     return (
         <Layout>
-            <Popular data={films.data} title={'Популярные фильмы текущего года'}/>
+            <Popular data={films.data} title='Популярные фильмы текущего года'/>
             <Recommendations/>
-            <Popular data={series.data} title={'Популярные сериалы текущего года'}/>
+            <Popular data={series.data} title='Популярные сериалы текущего года'/>
         </Layout>
     );
 }
