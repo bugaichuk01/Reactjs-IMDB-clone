@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from './UIButton.module.scss';
 import cn from 'classnames';
+import styles from './Button.module.scss';
 
 interface UIButtonTypes {
     text: string;
     style?: string;
 }
 
-export const UiButton: React.FC<UIButtonTypes> = ({text, style}) => {
+export const Button: React.FC<UIButtonTypes> = ({text, style}) => {
     return (
         <button className={cn(styles.button, style)}>{text}</button>
     );
