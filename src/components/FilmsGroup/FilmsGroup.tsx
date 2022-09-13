@@ -3,8 +3,8 @@ import {IMovie} from "../../types/IMovie";
 import styles from './FilmsGroup.module.scss';
 
 interface FilmsGroupTypes {
-    data: IMovie[] | undefined;
     title: string;
+    data: IMovie[] | undefined;
 }
 
 export const FilmsGroup: React.FC<FilmsGroupTypes> = ({data, title}) => {
