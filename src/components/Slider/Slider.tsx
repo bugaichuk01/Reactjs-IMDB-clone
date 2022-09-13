@@ -1,12 +1,7 @@
 import React from 'react';
 import styles from "./Slider.module.scss";
-import cn from "classnames";
-import {FaChevronLeft, FaChevronRight} from "react-icons/fa";
 import AliceCarousel from "react-alice-carousel";
-
-interface renderButtonTypes {
-    isDisabled: boolean
-}
+import {SliderButton} from "../UI/SliderButton/SliderButton";
 
 interface SliderTypes {
     data: JSX.Element[] | undefined;
@@ -21,30 +16,21 @@ export const Slider: React.FC<SliderTypes> = ({data, itemsNumber}) => {
         1024: {items: itemsNumber},
     };
 
-    const renderPrevButton = ({isDisabled}: renderButtonTypes) => {
-        return <div className={isDisabled ? styles.disabled : cn(styles.thumb, styles.thumb_left)}>
-            <FaChevronLeft/>
-        </div>
-    };
-
-    const renderNextButton = ({isDisabled}: renderButtonTypes) => {
-        return <div className={isDisabled ? styles.disabled : cn(styles.thumb, styles.thumb_right)}>
-            <FaChevronRight/>
-        </div>
-    };
+    const renderPrevButton = () => <SliderButton style={styles.thumb_left} dir={'left'} />
+    const renderNextButton = () => <SliderButton style={styles.thumb_right} dir={'right'} />
 
     return (
         <div className={styles.container}>
             <AliceCarousel
-                mouseTracking
                 items={data}
-                responsive={responsive}
-                controlsStrategy="alternate"
-                disableDotsControls={true}
-                renderPrevButton={renderPrevButton}
-                renderNextButton={renderNextButton}
+                mouseTracking
                 infinite={true}
                 paddingRight={10}
+                responsive={responsive}
+                disableDotsControls={true}
+                controlsStrategy="alternate"
+                renderPrevButton={renderPrevButton}
+                renderNextButton={renderNextButton}
             />
         </div>
     );
