@@ -1,23 +1,29 @@
 import React from 'react';
-import styles from './Popular.module.scss';
 import {IMovies} from "../../types/IMovie";
-import {Button} from "../UI/Button/Button";
 import {Slider} from "../Slider/Slider";
 import {FilmItem} from "../FilmItem/FilmItem";
 import {deleteTrashFilms} from "../../_helpers/deleteTrashFilms";
+import {FilmsTitle} from "../FilmsTitle/FilmsTitle";
+import {Button} from "../UI/Button/Button";
+import styles from './Popular.module.scss';
+import {FaChevronRight} from "react-icons/fa";
 
 interface PopularTypes {
     data: IMovies | undefined;
-    title: string
+    title: string;
+    description: string;
 }
 
-export const Popular: React.FC<PopularTypes> = ({data, title}) => {
+export const Popular: React.FC<PopularTypes> = ({data, title, description}) => {
 
     return (
         <div className='container'>
             <div className={styles.top}>
-                <h1>{title}</h1>
-                <Button style={styles.button} text='Смотреть все'/>
+                <FilmsTitle title={title} description={description} />
+                <Button style={styles.button}>
+                    <span className={styles.title}>Смотреть все...</span>
+                    <FaChevronRight />
+                </Button>
             </div>
 
             <Slider
