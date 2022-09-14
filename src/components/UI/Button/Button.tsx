@@ -3,13 +3,15 @@ import cn from 'classnames';
 import styles from './Button.module.scss';
 
 interface UIButtonTypes {
-    text: string;
     style?: string;
+    children: React.ReactNode
 }
 
-export const Button: React.FC<UIButtonTypes> = ({text, style}) => {
+export const Button: React.FC<UIButtonTypes> = ({style, children}) => {
     return (
-        <button className={cn(styles.button, style)}>{text}</button>
+        <button className={cn(styles.button, style)}>
+            {children}
+        </button>
     );
 }
 
