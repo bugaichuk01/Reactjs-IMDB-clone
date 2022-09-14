@@ -1,0 +1,224 @@
+.prompt {
+  color: rgba(255, 255, 255, .7);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(31, 31, 31, .6);
+  height: 100%;
+}
+
+.close_btn {
+  transform-origin: center center;
+  transition: all .3s ease-in-out;
+  z-index: 1001;
+  position: absolute;
+  right: -20px;
+  display: flex;
+  align-items: center;
+  top: -60px;
+  padding: 10px;
+  margin: 10px;
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+
+  &:hover {
+    background: rgba(72, 72, 72, .7);
+  }
+}
+
+.prompt_dialog {
+  transition: opacity 75ms linear, transform .15s cubic-bezier(0, 0, .2, 1) 0ms;
+  transform: scale(1);
+  opacity: 1;
+  max-width: calc(600px - 2rem);
+  margin: auto;
+  border-radius: 5px;
+  padding: 1.5rem;
+  background: rgb(31, 31, 31);
+  box-shadow: 0 11px 15px -7px rgb(0, 0, .2), 0 24px 38px 3px rgb(0, 0, .14), 0 9px 46px 8px rgb(0, 0, .12);
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.prompt_panel {
+  max-height: calc(962px - 6rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.prompt_content {
+  max-height: 70vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-grow: 1;
+  padding: 0.5rem 0;
+
+  &:before {
+    margin-top: -0.5rem;
+    content: "";
+    position: absolute;
+    height: 0.5rem;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    height: 0.5rem;
+    width: 100%;
+    z-index: 1;
+    bottom: 0;
+  }
+}
+
+.header {
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 0;
+  display: flex;
+  font-size: var(--type-bodySmall-size);
+  font-weight: var(--type-bodyBold-weight);
+  letter-spacing: 0.01786em;
+  line-height: var(--type-bodySmall-lineHeight);
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.75rem;
+  max-width: 100%;
+}
+
+.poster {
+  min-width: auto;
+  margin-right: 0;
+  display: inline-flex;
+  position: relative;
+  text-decoration: none;
+  grid-column: span 2;
+  width: 92px;
+  border-radius: var(--content-radius);
+}
+
+.header_info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.75rem;
+  overflow: hidden;
+}
+
+.title {
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: var(--type-bodyMedium-size);
+  font-weight: var(--type-bodyExtraBold-weight);
+  letter-spacing: normal;
+  text-decoration: inherit;
+  text-transform: inherit;
+  line-height: 1.2em;
+
+  h3 {
+    margin: 0;
+    color: var(--color-white);
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    display: flex;
+    max-height: 2.4em;
+    overflow: hidden;
+    border: none;
+  }
+}
+
+.list {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-wrap: nowrap;
+  align-items: center;
+  list-style: none;
+  margin: 0 0 0.4rem;
+  padding: 0;
+
+  li {
+    display: inline;
+  }
+}
+
+.secondary_genre {
+  &:not(:first-child) {
+    &:before {
+      display: inline-block;
+      margin: 0 0.5rem 0.2rem;
+      content: "";
+      font-size: 1rem;
+      line-height: .5rem;
+      padding: 1px;
+      border-radius: 50%;
+      vertical-align: middle;
+      background-color: currentColor;
+    }
+  }
+}
+
+.secondary_item {
+  &:before {
+    display: inline-block;
+    margin: 0 0.5rem 0.2rem;
+    content: "";
+    font-size: 1rem;
+    line-height: .5rem;
+    padding: 1px;
+    border-radius: 50%;
+    vertical-align: middle;
+    background-color: currentColor;
+  }
+}
+
+
+.rating_group {
+  font-size: 1.1rem;
+  line-height: var(--type-bodySmall-lineHeight);
+  letter-spacing: 0.03125em;
+  position: relative;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.rating_secondary {
+  color: #838383;
+}
+
+.icon {
+  color: var(--color-yellow);
+  font-size: 1.2rem;
+  margin-right: 0.5em;
+}
+
+.description {
+  font-size: var(--type-bodySmall-size);
+  font-weight: var(--type-bodySemiBold-weight);
+  color: var(--color-white)
+}
+
+.watchlist_btn {
+  color: var(--color-blue);
+  background: rgba(255, 255, 255, .08);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
+}
