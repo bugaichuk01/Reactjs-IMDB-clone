@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './Recommendations.module.scss';
 import {Slider} from "../Slider/Slider";
 import {
     useGetPopularMiniSeriesQuery,
@@ -8,6 +7,7 @@ import {
     useGetTopAwaitFilmsQuery
 } from "../../_services/serviceAPI";
 import {FilmsGroup} from "../FilmsGroup/FilmsGroup";
+import {FilmsTitle} from "../FilmsTitle/FilmsTitle";
 export const Recommendations = () => {
 
     const premiers = useGetPremiersQuery();
@@ -24,8 +24,7 @@ export const Recommendations = () => {
 
     return (
         <div className='container'>
-            <h3 className={styles.title}>Интересное</h3>
-            <h3 className={styles.editors_pick} style={{color: 'white', textAlign: 'start'}}>Подборка редакции</h3>
+            <FilmsTitle title='Интересное' description='Подборка редакции' info='Премьеры, популярное и цифровые релизы' />
             <Slider itemsNumber={3} data={filmsGroup.map(group => group.element)}/>
         </div>
     );
