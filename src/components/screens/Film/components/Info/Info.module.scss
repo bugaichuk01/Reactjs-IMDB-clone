@@ -1,0 +1,24 @@
+.item {
+  display: flex;
+  align-items: center;
+  color: var(--color-light-grey);
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+.caption {
+  display: block;
+  font-size: 15px;
+  line-height: 18px;
+  color: var(--color-white);
+  font-weight: var(--type-bodyBold-weight);
+  flex: 0 0 200px;
+}
+
+.value {
+  position: relative;
+  font-size: 15px;
+  line-height: 18px;
+}
