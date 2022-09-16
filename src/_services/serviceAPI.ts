@@ -71,7 +71,23 @@ export const serviceAPI = createApi({
                     'X-API-KEY': `${process.env.REACT_APP_API_KEY_SECOND}`
                 }
             })
-        })
+        }),
+        getImages: build.query<IMovie, string>({
+            query: (id) => ({
+                url: `/films/${id}/images?type=STILL`,
+                headers: {
+                    'X-API-KEY': `${process.env.REACT_APP_API_KEY_SECOND}`
+                }
+            })
+        }),
+        getBoxOffice: build.query<any, string>({
+            query: (id) => ({
+                url: `/films/${id}/box_office`,
+                headers: {
+                    'X-API-KEY': `${process.env.REACT_APP_API_KEY_SECOND}`
+                }
+            })
+        }),
     })
 })
 
@@ -83,7 +99,9 @@ export const {
     useGetPremiersQuery,
     useGetTopAwaitFilmsQuery,
     useGetPopularMiniSeriesQuery,
-    useGetTopFilmsQuery
+    useGetTopFilmsQuery,
+    useGetImagesQuery,
+    useGetBoxOfficeQuery,
 } = serviceAPI
 
 
