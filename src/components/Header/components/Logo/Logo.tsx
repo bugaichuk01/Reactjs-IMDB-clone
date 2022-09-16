@@ -3,8 +3,7 @@ import styles from './Logo.module.scss';
 
 export const Logo = () => {
     return (
-        <a className={styles.logo} href="/?ref_=nv_home"
-           aria-label="Home">
+        <a className={styles.logo} href="/?ref_=nv_home">
             <svg id="home_img" className="ipc-logo" xmlns="http://www.w3.org/2000/svg" width="64" height="32"
                  viewBox="0 0 64 32" version="1.1">
                 <g fill="#F5C518">
