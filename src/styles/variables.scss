@@ -8,8 +8,12 @@
 
   //font-line-height
   --type-bodySmall-lineHeight: 1.25rem;
+  --type-bodyAverage-lineHeight: 1.55rem;
+  --type-bodyRegular-lineHeight: 2.25rem;
+  --type-bodyMedium-lineHeight: 3.25rem;
 
   //font-weight
+  --type-bodyThin-weight: 300;
   --type-bodyRegular-weight: 400;
   --type-bodyMedium-weight: 500;
   --type-bodySemiBold-weight: 600;
@@ -21,14 +25,17 @@
   --type-bodySmall-size: 0.875rem;
   --type-bodyRegular-size: 1rem;
   --type-bodyMedium-size: 1.5rem;
+  --type-bodyBig-size: 2rem;
 
   // colors
   --color-white: #fff;
   --color-black: #000;
   --color-yellow: #f5c518;
+  --color-orange: #f66600;
   --color-blue: #5799ef;
   --color-dark: #141414;
   --color-light-dark: #1a1a1a;
   --color-grey: #9b9b9b;
+  --color-light-grey: #ffffffb3;
   --color-dark-grey: #606060;
 }
