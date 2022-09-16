@@ -1,13 +1,13 @@
 import React from 'react';
-import {Slider} from "../Slider/Slider";
+import {Slider} from "../../../../Slider/Slider";
 import {
     useGetPopularMiniSeriesQuery,
     useGetTopFilmsQuery,
     useGetPremiersQuery,
     useGetTopAwaitFilmsQuery
-} from "../../_services/serviceAPI";
-import {FilmsGroup} from "../FilmsGroup/FilmsGroup";
-import {FilmsTitle} from "../FilmsTitle/FilmsTitle";
+} from "../../../../../_services/serviceAPI";
+import {FilmsGroup} from "../../../../FilmsGroup/FilmsGroup";
+import {FilmsTitle} from "../../../../FilmsTitle/FilmsTitle";
 export const Recommendations = () => {
 
     const premiers = useGetPremiersQuery();
@@ -23,10 +23,10 @@ export const Recommendations = () => {
     ]
 
     return (
-        <div className='container'>
+        <>
             <FilmsTitle title='Интересное' description='Подборка редакции' info='Премьеры, популярное и цифровые релизы' />
             <Slider itemsNumber={3} data={filmsGroup.map(group => group.element)}/>
-        </div>
+        </>
     );
 }
 
