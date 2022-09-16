@@ -4,7 +4,7 @@ import {useGetFilmsBySearchQuery} from "../../../../_services/serviceAPI";
 import styles from './SearchList.module.scss';
 import {IMovie} from "../../../../types/IMovie";
 import {ListItem} from "../ListItem/ListItem";
-import ReactLoading from 'react-loading';
+import {Content} from "../../../Content/Content";
 
 interface SearchListProps {
     debouncedValue: string
@@ -12,7 +12,10 @@ interface SearchListProps {
 
 export const SearchList: React.FC<SearchListProps> = ({debouncedValue}) => {
     const {currentOption} = useTypedSelector(state => state.dropDownReducer);
-    const {data, isFetching, refetch} = useGetFilmsBySearchQuery({type: currentOption.value, keyword: debouncedValue});
+    const {data, isFetching, isLoading, refetch} = useGetFilmsBySearchQuery({
+        type: currentOption.value,
+        keyword: debouncedValue
+    });
 
     useEffect(() => {
         refetch();
@@ -21,21 +24,12 @@ export const SearchList: React.FC<SearchListProps> = ({debouncedValue}) => {
     return (
         <div className={styles.search_list_container}>
             <div className={styles.search_list}>
-                {!isFetching ? (
-                    <>
-                        {data?.items?.length ? (
-                            <>
-                                {data && data.items.slice(0, 8).map((item: IMovie) => (
-                                    <ListItem key={item.kinopoiskId} item={item}/>
-                                ))}
-                            </>
-                        ) : (
-                            <p className={styles.no_results}>По вашему запросу ничего не найдено</p>
-                        )}
-                    </>
-                ) : (
-                    <ReactLoading className={styles.loader} type='spin' height={40} width={40}/>
-                )}
+
+                <Content items={data?.items} isLoading={isLoading} isFetching={isFetching}>
+                    {data && data.items.slice(0, 8).map((item: IMovie) => (
+                        <ListItem key={item.kinopoiskId} item={item}/>
+                    ))}
+                </Content>
             </div>
         </div>
     );
