@@ -7,6 +7,7 @@ import {Info} from "./components/Info/Info";
 import {Bookmark} from "./components/Bookmark/Bookmark";
 import {Button} from "../UI/Button/Button";
 import {BsPlusLg} from "react-icons/bs";
+import {Link} from "react-router-dom";
 
 interface FilmItemProps {
     item: IMovie
@@ -18,9 +19,11 @@ export const FilmItem: React.FC<FilmItemProps> = ({item}) => {
     return (
         <li className={styles.list_item}>
             {isInfoOpen && <Prompt id={item.kinopoiskId.toString()} isOpen={isInfoOpen} onClose={setIsInfoOpen}/>}
-
-            <img className={styles.image} src={item.posterUrl} alt={item.nameOriginal}/>
             <Bookmark/>
+
+            <Link to={`${item.kinopoiskId}`}>
+                <img className={styles.image} src={item.posterUrl} alt={item.nameOriginal}/>
+            </Link>
             <div className={styles.bottom}>
                 <div className={styles.rating_group}>
                     <FaStar className={styles.icon}/>
@@ -40,5 +43,6 @@ export const FilmItem: React.FC<FilmItemProps> = ({item}) => {
                 </div>
             </div>
         </li>
-    );
+    )
+        ;
 }
