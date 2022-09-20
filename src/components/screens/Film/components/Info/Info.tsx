@@ -8,7 +8,7 @@ type InfoItem = {
 }
 
 interface InfoTypes {
-    items: InfoItem[]
+    items: InfoItem[] | undefined;
 }
 
 export const Info: React.FC<InfoTypes> = ({items}) => {
