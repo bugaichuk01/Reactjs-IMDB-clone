@@ -1,0 +1,27 @@
+.facts {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  color: rgba(#fff, 0.7);
+  position: relative;
+  font-size: 14px;
+  line-height: 21px;
+
+  a {
+    color: var(--color-blue);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--color-blue);
+    }
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(#fff, 0.1);
+  }
+}
