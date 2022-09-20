@@ -1,5 +1,5 @@
 import React from 'react';
-import {IMovies} from "../../../../../types/IMovie";
+import {IMovie} from "../../../../../types/IMovie";
 import {Slider} from "../../../../Slider/Slider";
 import {FilmItem} from "../../../../FilmItem/FilmItem";
 import {deleteTrashFilms} from "../../../../../_helpers/deleteTrashFilms";
@@ -7,9 +7,10 @@ import {FilmsTitle} from "../../../../FilmsTitle/FilmsTitle";
 import {Button} from "../../../../UI/Button/Button";
 import styles from './Popular.module.scss';
 import {FaChevronRight} from "react-icons/fa";
+import {IBaseItems} from "../../../../../types/IQuery";
 
 interface PopularTypes {
-    data: IMovies | undefined;
+    data: IBaseItems<IMovie> | undefined;
     title: string;
     description: string;
 }
