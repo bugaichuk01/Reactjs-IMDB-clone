@@ -18,10 +18,10 @@ export const FilmItem: React.FC<FilmItemProps> = ({item}) => {
 
     return (
         <li className={styles.list_item}>
-            {isInfoOpen && <Prompt id={item.kinopoiskId.toString()} isOpen={isInfoOpen} onClose={setIsInfoOpen}/>}
+            {isInfoOpen && <Prompt id={item.kinopoiskId} isOpen={isInfoOpen} onClose={setIsInfoOpen}/>}
             <Bookmark/>
 
-            <Link to={`${item.kinopoiskId}`}>
+            <Link to={`film/${item.kinopoiskId}`}>
                 <img className={styles.image} src={item.posterUrl} alt={item.nameOriginal}/>
             </Link>
             <div className={styles.bottom}>
