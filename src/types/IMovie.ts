@@ -44,10 +44,3 @@ export interface IMovie {
     webUrl: string;
     year?: number;
 }
-
-export interface IMovies {
-    items: IMovie[];
-    films?: IMovie[];
-    total: number;
-    totalPage: number;
-}
