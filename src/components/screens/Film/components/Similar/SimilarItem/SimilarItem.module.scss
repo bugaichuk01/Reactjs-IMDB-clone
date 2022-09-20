@@ -1,0 +1,35 @@
+.list_item {
+  color: var(--color-white);
+  background-color: var(--color-light-dark);
+  border-radius: 0 0 var(--content-radius) var(--content-radius);
+  padding-bottom: var(--type-bodyRegular-size);
+  margin-right: 10px;
+  list-style: none;
+  max-width: 200px;
+}
+
+.image {
+  max-height: 280px;
+  min-height: 240px;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.bottom {
+  padding: 0 0.5rem;
+}
+
+.name {
+  min-height: 44px;
+  padding-top: 1.5rem;
+  display: block;
+  text-align: start;
+  font-size: var(--type-bodyRegular-size);
+  font-weight: var(--type-bodyRegular-weight);
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
