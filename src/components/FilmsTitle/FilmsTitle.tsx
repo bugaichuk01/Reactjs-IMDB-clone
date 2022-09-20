@@ -3,7 +3,7 @@ import styles from "./FilmsTitle.module.scss";
 
 interface FilmsTitleTypes {
     title: string;
-    description: string;
+    description?: string;
     info?: string;
 }
 
