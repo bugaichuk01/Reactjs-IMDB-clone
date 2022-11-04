@@ -16,7 +16,7 @@ module.exports = {
     entry: "./src/index.tsx",
     output: {
         path: path.resolve(__dirname, './dist'),
-        publicPath: "https://reactjs-imdb-clone.vercel.app/[name].[contenthash].js/",
+        publicPath: "/",
         filename: '[name].[contenthash].js'
     },
     devServer: {
