@@ -1,7 +1,7 @@
-import {combineReducers, configureStore} from "@reduxjs/toolkit";
-import {serviceAPI} from "../_services/serviceAPI";
-import {dropDownReducer} from "./reducers/dropDown.slice";
+import {serviceAPI} from "_/serviceAPI";
 import {searchReducer} from "./reducers/search.slice";
+import {dropDownReducer} from "./reducers/dropDown.slice";
+import {combineReducers, configureStore} from "@reduxjs/toolkit";
 
 const rootReducer = combineReducers({
     [serviceAPI.reducerPath]: serviceAPI.reducer,
@@ -17,5 +17,4 @@ export const setupStore = () => {
 }
 
 export type AppStore = ReturnType<typeof setupStore>
-export type AppDispatch = AppStore['dispatch']
 export type RootState = ReturnType<AppStore['getState']>
