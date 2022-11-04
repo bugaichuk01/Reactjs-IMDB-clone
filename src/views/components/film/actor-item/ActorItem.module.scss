@@ -32,4 +32,8 @@
 .desc {
   color: rgba(#fff, 0.5);
   font-size: var(--type-bodySmall-size);
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
