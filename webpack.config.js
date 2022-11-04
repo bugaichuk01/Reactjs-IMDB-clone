@@ -13,10 +13,10 @@ if (process.env.NODE_ENV === "production") mode = "production"
 
 module.exports = {
     mode: mode,
-    entry: ["./src/index.tsx"],
+    entry: "./src/index.tsx",
     output: {
         path: path.resolve(__dirname, './dist'),
-        publicPath: "/",
+        publicPath: "https://reactjs-imdb-clone.vercel.app/[name].[contenthash].js/",
         filename: '[name].[contenthash].js'
     },
     devServer: {
