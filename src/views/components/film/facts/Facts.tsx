@@ -1,4 +1,3 @@
-import cn from 'classnames';
 import styles from './Facts.module.scss';
 import React from "react";
 import {useGetFactsQuery} from "_/serviceAPI";
@@ -13,7 +12,7 @@ export const Facts: React.FC<FilmFactsProps> = (({filmId}) => {
 
     return (
         <>
-            <ul className={cn('list', styles.facts)}>
+            <ul className={styles.facts}>
                 {data?.items.map((el: IFact) => <li key={el.text} className={styles.item} dangerouslySetInnerHTML={{__html: el.text}} />)}
             </ul>
         </>
