@@ -4,12 +4,13 @@ import styles from './Button.module.scss';
 
 interface UIButtonTypes {
     style?: string;
-    children: React.ReactNode
+    children: React.ReactNode;
+    onClick?: () => void;
 }
 
-export const Button: React.FC<UIButtonTypes> = ({style, children}) => {
+export const Button: React.FC<UIButtonTypes> = ({style, children, onClick}) => {
     return (
-        <button className={cn(style, styles.button)}>
+        <button onClick={onClick} className={cn(style, styles.button)}>
             {children}
         </button>
     );
