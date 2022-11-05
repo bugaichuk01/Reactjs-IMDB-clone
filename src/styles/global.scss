@@ -15,16 +15,16 @@ body {
   max-width: var(--container-width);
 }
 
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 img {
   height: auto;
   max-width: 100%;
   object-fit: cover;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 a {
