@@ -1,13 +1,12 @@
-import './styles/index.scss';
 import React from 'react';
-import './App.css';
-import {AppRoutes} from "./pages/AppRoutes/AppRoutes";
 import {BrowserRouter as Routes} from "react-router-dom";
+import './styles/index.scss';
+import {Layout} from "@/layout-components/layout/Layout";
 
 function App() {
     return (
         <Routes>
-            <AppRoutes/>
+            <Layout/>
         </Routes>
     );
 }
