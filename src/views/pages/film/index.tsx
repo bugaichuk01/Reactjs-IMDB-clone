@@ -10,9 +10,10 @@ import {Facts} from "../../components/film/facts/Facts";
 import {Actors} from "../../components/film/actors/Actors";
 import {Rating} from "../../components/film/rating/Rating";
 import {Similar} from "../../components/film/similar/Similar";
+import {Reviews} from "../../components/film/reviews/Reviews";
 import {FilmInfo} from "../../components/film/film-info/FilmInfo";
-import {EnumInfo} from "@/shared-components/enum-info/EnumInfo";
 import {Bookmark} from "@/shared-components/bookmark/Bookmark";
+import {EnumInfo} from "@/shared-components/enum-info/EnumInfo";
 
 interface ElementTypes {
     value: string;
@@ -22,9 +23,11 @@ interface ElementTypes {
 export const Element: React.FC<ElementTypes> = ({value, id}) => <React.Fragment>{id ? ', ' : ''}{value}</React.Fragment>
 
 export const Film = () => {
-    const {id} = useParams();
-    const boxOffice = useGetBoxOffice(Number(id));
-    const {data, isLoading} = useGetFilmByIdQuery(Number(id));
+    const params = useParams();
+    const id = Number(params.id);
+
+    const boxOffice = useGetBoxOffice(id);
+    const {data, isLoading} = useGetFilmByIdQuery(id);
 
     const {
         countries,
@@ -46,12 +49,12 @@ export const Film = () => {
     const items = [
         {
             caption: 'Страны',
-            value: countries?.map((el, idx) => <Element value={el.country} key={idx} id={idx}/>),
+            value: countries?.map((el, id) => <Element value={el.country} key={id} id={id}/>),
             condition: countries?.length
         },
         {
             caption: 'Жанр',
-            value: genres?.map((el, idx) => <Element value={converter.convertFirstLetter(el.genre)} key={idx} id={idx}/>),
+            value: genres?.map((el, id) => <Element value={converter.convertFirstLetter(el.genre)} key={id} id={id}/>),
             condition: genres?.length
         },
         {caption: 'Слоган', value: slogan, condition: slogan},
@@ -99,7 +102,8 @@ export const Film = () => {
                     </div>
                 </div>
                 <Tabs tabs={tabs}/>
-                <Similar />
+                <Similar id={id} />
+                <Reviews id={id} />
             </div>
         </>
     );
