@@ -1,10 +1,10 @@
 .title {
-  line-height: 2.5rem;
+  line-height: var(--type-bodyRegular-lineHeight);
   letter-spacing: .00735em;
   text-decoration: inherit;
   text-transform: inherit;
-  font-weight: 800;
-  font-size: 2rem;
+  font-weight: var(--type-bodyExtraBold-weight);
+  font-size: var(--type-bodyBig-size);
   color: var(--color-yellow);
   text-align: start;
 }
