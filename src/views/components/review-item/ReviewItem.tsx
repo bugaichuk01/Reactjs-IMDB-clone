@@ -12,7 +12,7 @@ interface ReviewItemProps {
 }
 
 export const ReviewItem: React.FC<ReviewItemProps> = ({item}) => {
-    const [isTruncated, setIsTruncated] = useState<boolean>(true);
+    const [isTrimmed, setIsTrimmed] = useState<boolean>(true);
 
     const data = new Date(item.date)
 
@@ -20,10 +20,10 @@ export const ReviewItem: React.FC<ReviewItemProps> = ({item}) => {
         <div className={styles.item}>
             <div className={styles.content}>
                 {item.title && <h3 className={styles.title}>{item.title}</h3>}
-                <p className={cn(styles.review, isTruncated && styles.truncated)}>{item.description}</p>
+                <p className={cn(styles.review, isTrimmed && styles.trimmed)}>{item.description}</p>
                 <div className={styles.bottom}>
-                    <Button style={styles.button} onClick={() => setIsTruncated(!isTruncated)}>
-                        {isTruncated ? 'Подробнее' : 'Скрыть'}
+                    <Button style={styles.button} onClick={() => setIsTrimmed(!isTrimmed)}>
+                        {isTrimmed ? 'Подробнее' : 'Скрыть'}
                     </Button>
 
                     <div className={styles.buttons}>

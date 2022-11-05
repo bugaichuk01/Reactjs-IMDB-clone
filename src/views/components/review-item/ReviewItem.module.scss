@@ -41,7 +41,7 @@
   font-size: var(--type-bodyRegular-size);
   line-height: var(--type-bodySmall-lineHeight);
 
-  &.truncated {
+  &.trimmed {
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
