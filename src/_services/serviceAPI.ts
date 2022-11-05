@@ -4,9 +4,10 @@ import {getCurrentMonth} from "_/getCurrentMonth";
 import {IFact} from "../types/IFact";
 import {IMovie} from "../types/IMovie";
 import {IStaff} from "../types/IStaff";
+import {IReview} from "../types/IReview";
 import {ISimilar} from "../types/ISimilar";
 import {IBoxOffice} from "../types/IBoxOffice";
-import {IBaseItems, ISearchQuery} from "../types/IQuery";
+import {IBaseItems, IParams, ISearchQuery} from "../types/IQuery";
 
 export const serviceAPI = createApi({
     reducerPath: 'serviceAPI',
@@ -61,6 +62,9 @@ export const serviceAPI = createApi({
         getSimilar: build.query<IBaseItems<ISimilar>, number | undefined>({
             query: (id) => `/v2.2/films/${id}/similars`
         }),
+        getReviews: build.query<IBaseItems<IReview>, IParams>({
+            query: ({id, text = 'DATE_DESC', page = 1}) => `/v2.2/films/${id}/reviews?order=${text}&page=${page}`
+        }),
     })
 })
 
@@ -78,6 +82,7 @@ export const {
     useGetActorsQuery,
     useGetFactsQuery,
     useGetSimilarQuery,
+    useGetReviewsQuery,
 } = serviceAPI
 
 
