@@ -4,13 +4,11 @@ import {SimilarItem} from "../similar-item/SimilarItem";
 import {Slider} from "@/shared-components/slider/Slider";
 import {Caption} from "@/shared-components/caption/Caption";
 import {Content} from "@/layout-components/content/Content";
+import { useParams } from "react-router-dom";
 
-interface SimilarTypes {
-    id: number | undefined;
-}
-
-export const Similar: React.FC<SimilarTypes> = ({id}) => {
-    const {data, isLoading, isFetching} = useGetSimilarQuery(id)
+export const Similar = () => {
+    const {id} = useParams();
+    const {data, isLoading, isFetching} = useGetSimilarQuery(Number(id))
 
     return (
         <>

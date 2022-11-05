@@ -16,7 +16,7 @@ import {Bookmark} from "@/shared-components/bookmark/Bookmark";
 
 interface ElementTypes {
     value: string;
-    id: number | undefined;
+    id: number;
 }
 
 export const Element: React.FC<ElementTypes> = ({value, id}) => <React.Fragment>{id ? ', ' : ''}{value}</React.Fragment>
@@ -99,7 +99,7 @@ export const Film = () => {
                     </div>
                 </div>
                 <Tabs tabs={tabs}/>
-                <Similar id={data?.kinopoiskId} />
+                <Similar />
             </div>
         </>
     );

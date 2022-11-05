@@ -11,7 +11,7 @@ import {Button} from "@/shared-components/button/Button";
 import {EnumInfo} from "@/shared-components/enum-info/EnumInfo";
 
 interface PromptTypes {
-    id: number | undefined;
+    id: number;
     onClose: (value: boolean) => void;
     isOpen: boolean;
 }
