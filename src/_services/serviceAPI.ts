@@ -16,6 +16,7 @@ export const serviceAPI = createApi({
             headers.set('X-API-KEY', `${process.env.REACT_APP_API_KEY}`)
             headers.set('Access-Control-Allow-Origin', '*')
             headers.set('Access-Control-Allow-Credentials', 'true')
+            headers.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
             headers.set('X-API-KEY', `${process.env.REACT_APP_API_KEY}`)
             return headers
         }
