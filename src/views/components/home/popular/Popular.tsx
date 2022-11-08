@@ -4,13 +4,13 @@ import {FaChevronRight} from "react-icons/fa";
 import {FilmItem} from "../film-item/FilmItem";
 import {deleteTrashFilms} from "_/deleteTrashFilms";
 import {IMovie} from "../../../../types/IMovie";
-import {IBaseItems} from "../../../../types/IQuery";
+import {IBaseQuery} from "../../../../types/IQuery";
 import {Slider} from "@/shared-components/slider/Slider";
 import {Button} from "@/shared-components/button/Button";
 import {Caption} from "@/shared-components/caption/Caption";
 
 interface PopularTypes {
-    data: IBaseItems<IMovie> | undefined;
+    data: IBaseQuery<IMovie> | undefined;
     title: string;
     description: string;
 }
