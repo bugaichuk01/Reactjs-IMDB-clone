@@ -7,7 +7,7 @@ import {IStaff} from "../types/IStaff";
 import {IReview} from "../types/IReview";
 import {ISimilar} from "../types/ISimilar";
 import {IBoxOffice} from "../types/IBoxOffice";
-import {IBaseItems, IParams, ISearchQuery} from "../types/IQuery";
+import {IBaseQuery, IParams, ISearchQuery} from "../types/IQuery";
 
 export const serviceAPI = createApi({
     reducerPath: 'serviceAPI',
@@ -26,43 +26,43 @@ export const serviceAPI = createApi({
         getFilmById: build.query<IMovie, number | undefined>({
             query: (id) => `/v2.2/films/${id}`
         }),
-        getPopularFilms: build.query<IBaseItems<IMovie>, void>({
+        getPopularFilms: build.query<IBaseQuery<IMovie>, void>({
             query: () => `/v2.2/films?type=FILM&order=NUM_VOTE&yearFrom=${getCurrentYear()}`
         }),
-        getPopularSeries: build.query<IBaseItems<IMovie>, void>({
+        getPopularSeries: build.query<IBaseQuery<IMovie>, void>({
             query: () => `/v2.2/films?type=TV_SERIES&order=NUM_VOTE&yearFrom=${getCurrentYear()}`
         }),
-        getPremiers: build.query<IBaseItems<IMovie>, void>({
+        getPremiers: build.query<IBaseQuery<IMovie>, void>({
             query: () => `/v2.2/films/premieres?year=${getCurrentYear()}&month=${getCurrentMonth()}`
         }),
-        getTopAwaitFilms: build.query<IBaseItems<IMovie>, void>({
+        getTopAwaitFilms: build.query<IBaseQuery<IMovie>, void>({
             query: () => `/v2.2/films/top?type=TOP_AWAIT_FILMS`
         }),
-        getPopularMiniSeries: build.query<IBaseItems<IMovie>, void>({
+        getPopularMiniSeries: build.query<IBaseQuery<IMovie>, void>({
             query: () => `/v2.2/films?order=NUM_VOTE&type=MINI_SERIES&yearFrom=${getCurrentYear()}`
         }),
-        getTopFilms: build.query<IBaseItems<IMovie>, void>({
+        getTopFilms: build.query<IBaseQuery<IMovie>, void>({
             query: () => `/v2.2/films/top?type=TOP_250_BEST_FILMS`
         }),
-        getFilmsBySearch: build.query<IBaseItems<IMovie>, ISearchQuery>({
+        getFilmsBySearch: build.query<IBaseQuery<IMovie>, ISearchQuery>({
             query: ({type, keyword}) => `/v2.2/films?type=${type}&keyword=${keyword}`
         }),
         getImages: build.query<IMovie, number | undefined>({
             query: (id) => `/v2.2/films/${id}/images?type=STILL`
         }),
-        getBoxOffice: build.query<IBaseItems<IBoxOffice>, number | undefined>({
+        getBoxOffice: build.query<IBaseQuery<IBoxOffice>, number | undefined>({
             query: (id) => `/v2.2/films/${id}/box_office`
         }),
         getActors: build.query<IStaff[], number | undefined>({
             query: (id) => `v1/staff?filmId=${id}`
         }),
-        getFacts: build.query<IBaseItems<IFact>, number | undefined>({
+        getFacts: build.query<IBaseQuery<IFact>, number | undefined>({
             query: (id) => `/v2.2/films/${id}/facts`
         }),
-        getSimilar: build.query<IBaseItems<ISimilar>, number | undefined>({
+        getSimilar: build.query<IBaseQuery<ISimilar>, number | undefined>({
             query: (id) => `/v2.2/films/${id}/similars`
         }),
-        getReviews: build.query<IBaseItems<IReview>, IParams>({
+        getReviews: build.query<IBaseQuery<IReview>, IParams>({
             query: ({id, text = 'DATE_DESC', page = 1}) => `/v2.2/films/${id}/reviews?order=${text}&page=${page}`
         }),
     })
