@@ -9,8 +9,8 @@ export interface IParams {
     page?: number;
 }
 
-export interface IBaseItems<T> {
-    items: T[];
+export interface IBaseQuery<T> {
+    items?: T[];
     films?: T[];
     total: number;
     totalPage?: number;
