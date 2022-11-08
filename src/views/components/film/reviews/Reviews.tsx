@@ -1,25 +1,25 @@
 import React, {useEffect, useState} from 'react';
 import styles from './Reviews.module.scss';
+import ReactPaginate from "react-paginate";
 import {useGetReviewsQuery} from '_/serviceAPI';
-import {Loader} from "@/layout-components/content/Content";
+import {Content} from "@/layout-components/content/Content";
 import {Caption} from "@/shared-components/caption/Caption";
 import {ReviewItem} from "../../review-item/ReviewItem";
-import ReactPaginate from "react-paginate";
 
 interface ReviewsProps {
     id: number | undefined
 }
 
 export const Reviews: React.FC<ReviewsProps> = ({id}) => {
-    const [pageCount, setPageCount] = useState<number>(0);
     const [page, setPage] = useState<number>(1);
-    const {data, isLoading, refetch} = useGetReviewsQuery({id: id, page: page});
+    const [pageCount, setPageCount] = useState<number>(0);
+    const {data, isLoading, isFetching, refetch} = useGetReviewsQuery({id: id, page: page});
 
     useEffect(() => {
-        data && setPageCount(Math.ceil(data?.total / data?.items.length));
+        data?.items && setPageCount(Math.ceil(data.total / data.items.length));
     }, [data]);
 
-    const handleClick = (value: {selected: number}) => {
+    const handleClick = (value: { selected: number }) => {
         setPage(value.selected + 1);
         refetch();
         window.scrollTo(0, 1250)
@@ -27,20 +27,12 @@ export const Reviews: React.FC<ReviewsProps> = ({id}) => {
     return (
         <>
             {
-                data?.items.length && (
-                    <div>
+                data?.items?.length && (
+                    <Content data={data} isLoading={isLoading} isFetching={isFetching}>
                         <Caption description={`Рецензии зрителей`}/>
                         <div className={styles.content}>
-                            {
-                                isLoading ? <Loader/>
-                                    : (
-                                        <>
-                                            {data?.items.map((item) => {
-                                                return <ReviewItem key={item.kinopoiskId} item={item}/>;
-                                            })}
-                                        </>
-                                    )
-                            }
+                            {data?.items.map((item) => <ReviewItem key={item.kinopoiskId} item={item}/>)}
+
                             <ReactPaginate
                                 breakLabel="..."
                                 onPageChange={handleClick}
@@ -53,7 +45,7 @@ export const Reviews: React.FC<ReviewsProps> = ({id}) => {
                                 activeClassName={styles.active}
                             />
                         </div>
-                    </div>
+                    </Content>
                 )
             }
         </>
