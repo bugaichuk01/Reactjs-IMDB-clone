@@ -5,7 +5,7 @@ import {useGetBoxOfficeQuery} from "_/serviceAPI";
 export const useGetBoxOffice = (id: number | undefined) => {
     const {data} = useGetBoxOfficeQuery(id);
 
-    return data?.items.map((item: IBoxOffice) => (
+    return data?.items?.map((item: IBoxOffice) => (
         {caption: `${converter.convertBoxOffice(item.type)}`, value: `${item.type !== 'BUDGET' ? '+' : ''} ${converter.convertPrice(item.amount)} $`, condition: item.amount}
     ));
 }
