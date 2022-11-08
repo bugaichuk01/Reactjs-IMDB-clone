@@ -17,10 +17,10 @@ export const Recommendations = () => {
     const topFilms = useGetTopFilmsQuery();
 
     const filmsGroup = [
-        {element: <FilmsGroup data={premiers?.data?.items} title='Кинопремьеры этого месяца'/>},
-        {element: <FilmsGroup data={topAwait?.data?.films} title='Топ ожидаемых фильмов'/>},
-        {element: <FilmsGroup data={miniSeries?.data?.items} title='Популярные мини-сериалы этого года'/>},
-        {element: <FilmsGroup data={topFilms?.data?.films} title='Топ 250 фильмов'/>}
+        {element: <FilmsGroup data={premiers?.data} title='Кинопремьеры этого месяца'/>},
+        {element: <FilmsGroup data={topAwait?.data} title='Топ ожидаемых фильмов'/>},
+        {element: <FilmsGroup data={miniSeries?.data} title='Популярные мини-сериалы этого года'/>},
+        {element: <FilmsGroup data={topFilms?.data} title='Топ 250 фильмов'/>}
     ]
 
     return (
