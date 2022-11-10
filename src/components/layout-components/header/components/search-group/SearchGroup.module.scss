@@ -36,4 +36,10 @@
 
 .search_group {
   display: flex;
+  position: relative;
+  width: 50%;
+
+  @media (max-width: 576px) {
+    width: 70%;
+  }
 }
