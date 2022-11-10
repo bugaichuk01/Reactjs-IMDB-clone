@@ -30,8 +30,6 @@ export const SearchList: React.FC<SearchListProps> = ({debouncedValue}) => {
 
     return (
         <div ref={divRef} className={styles.search_list_container}>
-            <div className={styles.search_list}>
-
                 <Content data={data} isLoading={isLoading} isFetching={isFetching}>
                     {data?.items?.slice(0, 8).map((item: IMovie) => (
                         <Link to={`film/${item.kinopoiskId}`} key={item.kinopoiskId}>
@@ -39,7 +37,6 @@ export const SearchList: React.FC<SearchListProps> = ({debouncedValue}) => {
                         </Link>
                     ))}
                 </Content>
-            </div>
         </div>
     );
 }
