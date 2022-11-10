@@ -1,3 +1,7 @@
+.container {
+  width: 100%;
+}
+
 .title {
   line-height: var(--type-bodyRegular-lineHeight);
   letter-spacing: .00735em;
@@ -7,17 +11,26 @@
   font-size: var(--type-bodyBig-size);
   color: var(--color-yellow);
   text-align: start;
+
+  @media (max-width: 768px) {
+    font-size: var(--type-bodyMedium-size);
+  }
 }
 
 .editors_pick {
   max-height: 2.4em;
   overflow: hidden;
-  font-size: 24px;
+  font-size: var(--type-bodyMedium-size);
   border: none;
   padding-left: 0.75rem;
   position: relative;
   color: var(--color-white);
   text-align: start;
+
+
+  @media (max-width: 768px) {
+    font-size: var(--type-bodyRegular-size);
+  }
 
   &:before {
     background: var(--color-yellow);

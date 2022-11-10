@@ -3,25 +3,36 @@
   display: flex;
   align-items: end;
   justify-content: space-between;
+}
 
-  h1 {
-    color: white;
-    width: 100%;
+.btn_container {
+  width: 20%;
+
+  @media (max-width: 1024px) {
+    width: 30%;
   }
 }
 
 .button {
-  width: 15% !important;
   color: var(--color-blue);
   background: none;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   opacity: 1;
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
 
   &:hover {
     background: rgba(87, 153, 239, .12);
+  }
+
+  svg {
+    margin: 0 !important;
   }
 }
 
 .title {
   margin-right: 5px;
+  white-space: nowrap;
 }

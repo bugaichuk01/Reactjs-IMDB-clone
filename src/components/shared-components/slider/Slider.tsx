@@ -11,9 +11,11 @@ interface SliderTypes {
 export const Slider: React.FC<SliderTypes> = ({data, itemsNumber}) => {
 
     const responsive = {
-        0: {items: 1},
-        568: {items: 2},
-        1024: {items: itemsNumber},
+        0: {items: 2},
+        629: {items: 3},
+        820: {items: 4},
+        1024: {items: 5},
+        1200: {items: itemsNumber},
     };
 
     const renderPrevButton = () => <SliderButton style={styles.thumb_left} dir={'left'} />

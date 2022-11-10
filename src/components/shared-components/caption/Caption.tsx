@@ -9,7 +9,7 @@ interface FilmsTitleTypes {
 
 export const Caption: React.FC<FilmsTitleTypes> = ({title, description, info}) => {
     return (
-        <div>
+        <div className={styles.container}>
             <h3 className={styles.title}>{title}</h3>
             <h3 className={styles.editors_pick}>{description}</h3>
             <h3 className={styles.title_info }>{info}</h3>
