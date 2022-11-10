@@ -9,9 +9,9 @@ export const Home = () => {
 
     return (
         <>
-            <Popular data={films.data} title='Новинки' description='Популярные фильмы текущего года'/>
+            <Popular data={films.data} title='Новинки' description='Популярные фильмы'/>
             <Recommendations/>
-            <Popular data={series.data} title='Что посмотреть' description='Популярные сериалы текущего года'/>
+            <Popular data={series.data} title='Что посмотреть' description='Популярные сериалы'/>
         </>
     );
 }
