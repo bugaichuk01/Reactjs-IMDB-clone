@@ -4,7 +4,7 @@ import ReactPaginate from "react-paginate";
 import {useGetReviewsQuery} from '_/serviceAPI';
 import {Content} from "@/layout-components/content/Content";
 import {Caption} from "@/shared-components/caption/Caption";
-import {ReviewItem} from "../../review-item/ReviewItem";
+import {ReviewItem} from "../review-item/ReviewItem";
 
 interface ReviewsProps {
     id: number | undefined

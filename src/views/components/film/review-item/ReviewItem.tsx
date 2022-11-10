@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {IReview} from "../../../types/IReview";
+import {IReview} from "../../../../types/IReview";
 import cn from 'classnames';
 import styles from './ReviewItem.module.scss'
 import {Button} from "@/shared-components/button/Button";
