@@ -20,11 +20,13 @@ export const Popular: React.FC<PopularTypes> = ({data, title, description}) => {
     return (
         <>
             <div className={styles.top}>
-                <Caption title={title} description={description} />
-                <Button style={styles.button}>
-                    <span className={styles.title}>Смотреть все...</span>
-                    <FaChevronRight />
-                </Button>
+                <Caption title={title} description={description}/>
+                <div className={styles.btn_container}>
+                    <Button style={styles.button}>
+                        <span className={styles.title}>Смотреть все...</span>
+                        <FaChevronRight/>
+                    </Button>
+                </div>
             </div>
 
             <Slider
