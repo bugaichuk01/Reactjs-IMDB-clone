@@ -28,22 +28,20 @@ export const SearchInput = () => {
 
     return (
         <>
-            <form>
-                <input
-                    value={search}
-                    onChange={handleChange}
-                    type="search"
-                    className={styles.search}
-                    placeholder='Поиск...'
-                    onClick={handleSearch}
-                />
-                <button
+            <input
+                value={search}
+                onChange={handleChange}
+                type="search"
+                className={styles.search}
+                placeholder='Поиск...'
+                onClick={handleSearch}
+            />
+                 <button
                     className={cn(styles.closeBtn, debouncedValue && styles.active)}
                     onClick={handleClearInput}
                 >
                     <FiX />
                 </button>
-            </form>
             {isActive && <SearchList debouncedValue={debouncedValue}/>}
         </>
     );
