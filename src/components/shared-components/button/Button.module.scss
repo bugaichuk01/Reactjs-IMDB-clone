@@ -7,16 +7,9 @@
   padding: 0 var(--type-bodyRegular-size);
   margin-top: var(--type-bodyRegular-size);
 
-  -webkit-font-smoothing: antialiased;
   font-size: .875rem;
   font-weight: var(--type-bodyBold-weight);
   text-decoration: none;
-  --mdc-ripple-fg-size: 0;
-  --mdc-ripple-left: 0;
-  --mdc-ripple-top: 0;
-  --mdc-ripple-fg-scale: 1;
-  --mdc-ripple-fg-translate-end: 0;
-  --mdc-ripple-fg-translate-start: 0;
   will-change: transform, opacity;
   display: inline-flex;
   position: relative;
@@ -24,19 +17,8 @@
   box-sizing: border-box;
   height: 36px;
   border: none;
-  line-height: inherit;
-  -ms-user-select: none;
-  -webkit-appearance: none;
-  overflow: hidden;
-  vertical-align: middle;
   border-radius: var(--content-radius);
   letter-spacing: .02em;
-  min-width: 3rem;
-  max-width: 100%;
-  text-transform: none;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
   opacity: 1;
   transition: all .15s linear;
 
