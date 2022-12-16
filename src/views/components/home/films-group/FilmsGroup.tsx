@@ -1,22 +1,24 @@
 import React from 'react';
 import styles from './FilmsGroup.module.scss';
-import {IMovie} from "../../../../types/IMovie";
+import {IFilm} from "../../../../types/IFilm";
 import {Content} from "@/layout-components/content/Content";
-import {IBaseQuery} from "../../../../types/IQuery";
+import {IFilmTop} from "../../../../types/IFilmTop";
 
 interface FilmsGroupTypes {
     title: string;
-    data: IBaseQuery<IMovie> | undefined;
+    data?: IFilm[] | IFilmTop[];
 }
 
 export const FilmsGroup: React.FC<FilmsGroupTypes> = ({data, title}) => {
     return (
         <Content data={data}>
-            <div className={styles.wrapper}>
-                <div className={styles.films}>
-                    {data?.[data.items ? 'items' : 'films']?.slice(0, 3).map((item, index) => (
-                        <img key={index} src={item.posterUrl} alt={item.nameRu}/>
-                    ))}
+            <div className={styles.container}>
+                <div className={styles.wrapper}>
+                    <div className={styles.films}>
+                        {data?.slice(0, 3).map((item, index) => (
+                            <img key={index} src={item.posterUrl} alt={item.nameRu}/>
+                        ))}
+                    </div>
                 </div>
                 <span className={styles.description}>{title}</span>
             </div>

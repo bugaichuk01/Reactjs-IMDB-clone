@@ -1,14 +1,14 @@
 import React, {useRef} from 'react';
 import {createPortal} from "react-dom";
-import {BsPlusLg} from "react-icons/bs";
 import styles from './Prompt.module.scss';
 import {useOnClickOutside} from "usehooks-ts";
 import {FaStar, FaTimes} from "react-icons/fa";
 import converter from '_/converters';
 import {useGetFilmByIdQuery} from "_/serviceAPI";
 import {getTimeFromMinutes} from "_/getTimeFromMinutes";
-import {Button} from "@/shared-components/button/Button";
+import {Loader} from "@/layout-components/content/Content";
 import {EnumInfo} from "@/shared-components/enum-info/EnumInfo";
+import {WatchlistButton} from "@/shared-components/watchlist-button/WatchlistButton";
 
 interface PromptTypes {
     id: number;
@@ -30,40 +30,41 @@ export const Prompt: React.FC<PromptTypes> = ({id, isOpen, onClose}) => {
                 <div className={styles.close_btn} onClick={() => onClose(false)}>
                     <FaTimes/>
                 </div>
-                <div className={styles.prompt_panel}>
+                {data ?
                     <div className={styles.prompt_content}>
+                        <img className={styles.poster} src={data?.posterUrl} alt={data?.nameOriginal}/>
                         <div className={styles.header}>
-                            <img className={styles.poster} src={data?.posterUrl} alt={data?.nameOriginal}/>
-                            <div className={styles.header_info}>
-                                <div className={styles.title}>
-                                    <h3>{data?.nameRu}</h3>
-                                </div>
-                                <EnumInfo>
-                                    <li>{data?.year}</li>
-                                    <li>{getTimeFromMinutes(data?.filmLength)}</li>
-                                    <li>{converter.convertAgeLimit(data?.ratingAgeLimits)}</li>
-                                </EnumInfo>
-                                <EnumInfo>
-                                    {data?.genres.map((genre) => (
-                                        <li key={genre.genre}>{converter.convertFirstLetter(genre.genre)}</li>
-                                    ))}
-                                </EnumInfo>
-                                <div className={styles.rating_group}>
-                                    <FaStar className={styles.icon}/>
-                                    <div>
-                                        <span>{data?.ratingKinopoisk}</span>
-                                        <span className={styles.rating_secondary}>/10</span>
-                                    </div>
+                            <div className={styles.title}>
+                                <h3>{data?.nameRu}</h3>
+                            </div>
+                            <EnumInfo>
+                                <li>{data?.year}</li>
+                                <li>{getTimeFromMinutes(data?.filmLength)}</li>
+                                {data.ratingAgeLimits && <li>{converter.convertAgeLimit(data.ratingAgeLimits)}</li>}
+                            </EnumInfo>
+                            <EnumInfo>
+                                {data?.genres.map((genre) => (
+                                    <li key={genre.genre}>{converter.convertFirstLetter(genre.genre)}</li>
+                                ))}
+                            </EnumInfo>
+                            <EnumInfo>
+                                {data?.countries.map((country) => (
+                                    <li key={country.country}>{converter.convertFirstLetter(country.country)}</li>
+                                ))}
+                            </EnumInfo>
+                            <div className={styles.rating_group}>
+                                <FaStar className={styles.icon}/>
+                                <div className={styles.rating}>
+                                    <span>{data?.ratingKinopoisk}</span>
+                                    <span className={styles.rating_secondary}> / 10</span>
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.description}>{data?.description}</div>
-                        <Button style={styles.watchlist_btn}>
-                            <BsPlusLg/>
-                            Буду смотреть
-                        </Button>
                     </div>
-                </div>
+                    : <Loader/>
+                }
+                <div className={styles.description}>{data?.description}</div>
+                <WatchlistButton />
             </div>
         </div>,
         document.body

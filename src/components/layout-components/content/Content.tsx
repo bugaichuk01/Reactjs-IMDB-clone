@@ -1,15 +1,15 @@
 import React, {PropsWithChildren} from 'react';
 import styles from './Content.module.scss';
 import ReactLoading from "react-loading";
-import {IMovie} from "../../../types/IMovie";
-import {IBaseQuery} from "../../../types/IQuery";
 import {IFact} from "../../../types/IFact";
+import {IFilm} from "../../../types/IFilm";
 import {IReview} from "../../../types/IReview";
+import {IFilmTop} from "../../../types/IFilmTop";
 
-type Items =  IMovie | IFact | IReview;
+type Items = IFilm[] | IFact[] | IReview[] | IFilmTop[];
 
 interface ContentTypes<T> {
-    data: T | undefined;
+    data?: T;
     children: React.ReactNode;
     isLoading?: boolean;
     isFetching?: boolean;
@@ -25,14 +25,10 @@ export const Loader = () => {
 
 export const Error = ({children}: PropsWithChildren<{}>) => <p className={styles.no_results}>{children}</p>
 
-export const Content: React.FC<ContentTypes<IBaseQuery<Items>>> = ({data, children, isLoading, isFetching}) => {
+export const Content: React.FC<ContentTypes<Items>> = ({data, children, isLoading, isFetching}) => {
     return (
         <>
-            {isLoading || isFetching ? <Loader/> : (
-                <div className={styles.content}>
-                    {!data?.[data.items ? 'items' : 'films']?.length ? <Error>Ничего не найдено!</Error> : children}
-                </div>
-            )}
+            {isLoading || isFetching ? <Loader/> : !data?.length ? <Error>Ничего не найдено!</Error> : children}
         </>
     );
 }

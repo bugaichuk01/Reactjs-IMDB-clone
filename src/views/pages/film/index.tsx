@@ -11,7 +11,7 @@ import {Actors} from "../../components/film/actors/Actors";
 import {Rating} from "../../components/film/rating/Rating";
 import {Similar} from "../../components/film/similar/Similar";
 import {Reviews} from "../../components/film/reviews/Reviews";
-import {FilmInfo} from "../../components/film/film-info/FilmInfo";
+import {Detailed} from "../../components/film/detailed/Detailed";
 import {Bookmark} from "@/shared-components/bookmark/Bookmark";
 import {EnumInfo} from "@/shared-components/enum-info/EnumInfo";
 
@@ -63,7 +63,7 @@ export const Film = () => {
     const tabs = [
         {txt: 'Описание', content: <p className={styles.desc}>{description}</p>, condition: description?.length},
         {txt: 'Актёры', content: <Actors filmId={data?.kinopoiskId}/>},
-        {txt: 'Факты', content: <Facts filmId={data?.kinopoiskId}/>}
+        {txt: 'Факты', content: <Facts filmId={data?.kinopoiskId}/>},
     ]
 
     const movieYear = year && `(${year})`;
@@ -97,7 +97,7 @@ export const Film = () => {
                             </h2>
                             <Rating ratingKinopoisk={ratingKinopoisk} ratingImdb={ratingImdb}
                                     ratingGoodReview={ratingGoodReview}/>
-                            <FilmInfo items={totalItems}/>
+                            <Detailed items={totalItems}/>
                         </div>
                     </div>
                 </div>

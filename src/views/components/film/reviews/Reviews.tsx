@@ -1,51 +1,41 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import styles from './Reviews.module.scss';
-import ReactPaginate from "react-paginate";
 import {useGetReviewsQuery} from '_/serviceAPI';
+import {useTypedSelector} from "_/useTypedSelector";
 import {Content} from "@/layout-components/content/Content";
 import {Caption} from "@/shared-components/caption/Caption";
 import {ReviewItem} from "../review-item/ReviewItem";
+import {Paginate} from "@/shared-components/paginate/Paginate";
+import {useActions} from "_/useActions";
 
 interface ReviewsProps {
-    id: number | undefined
+    id?: number;
 }
 
 export const Reviews: React.FC<ReviewsProps> = ({id}) => {
-    const [page, setPage] = useState<number>(1);
-    const [pageCount, setPageCount] = useState<number>(0);
-    const {data, isLoading, isFetching, refetch} = useGetReviewsQuery({id: id, page: page});
+    const { reviewsPage } = useTypedSelector((state) => state.paginationReducer);
+    const {setReviewsPage} = useActions();
 
     useEffect(() => {
-        data?.items && setPageCount(Math.ceil(data.total / data.items.length));
-    }, [data]);
+        setReviewsPage(1)
+    }, [])
 
-    const handleClick = (value: { selected: number }) => {
-        setPage(value.selected + 1);
-        refetch();
-        window.scrollTo(0, 1250)
-    }
+    const {data, isLoading, isFetching} = useGetReviewsQuery({id: id, page: reviewsPage});
+
     return (
         <>
             {
-                data?.items?.length && (
-                    <Content data={data} isLoading={isLoading} isFetching={isFetching}>
-                        <Caption description={`Рецензии зрителей`}/>
+                data?.items && (
+                    <Content data={data?.items} isLoading={isLoading} isFetching={isFetching}>
+                        <Caption description={`Рецензии зрителей`} />
+
                         <div className={styles.content}>
                             {data?.items.map((item) => <ReviewItem key={item.kinopoiskId} item={item}/>)}
 
-                            <ReactPaginate
-                                breakLabel="..."
-                                onPageChange={handleClick}
-                                pageRangeDisplayed={5}
-                                containerClassName={styles.pagination_container}
-                                pageCount={pageCount}
-                                previousLinkClassName={styles.pagination_text}
-                                nextLinkClassName={styles.pagination_text}
-                                pageClassName={styles.page}
-                                activeClassName={styles.active}
-                            />
                         </div>
+                        <Paginate page={reviewsPage} setPage={setReviewsPage} totalPages={data?.totalPages}/>
                     </Content>
+
                 )
             }
         </>

@@ -1,26 +1,20 @@
 .button {
-  outline: none;
-  cursor: pointer;
-  justify-content: center;
-  min-height: 2.25rem;
-  width: 100%;
-  padding: 0 var(--type-bodyRegular-size);
-  margin-top: var(--type-bodyRegular-size);
-
-  font-size: var(--type-bodySmall-size);
-  font-weight: var(--type-bodyBold-weight);
-  text-decoration: none;
-  will-change: transform, opacity;
-  display: inline-flex;
-  position: relative;
-  align-items: center;
-  box-sizing: border-box;
   height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: none;
-  border-radius: var(--content-radius);
+  cursor: pointer;
+  position: relative;
   letter-spacing: .02em;
-  opacity: 1;
   transition: all .15s linear;
+  will-change: transform, opacity;
+  border-radius: var(--content-radius);
+  font-weight: var(--type-bodySemiBold-weight);
+
+  @media (max-width: 768px) {
+    font-size: var(--type-bodyTiny-size);
+  }
 
   svg {
     margin-right: 10px;

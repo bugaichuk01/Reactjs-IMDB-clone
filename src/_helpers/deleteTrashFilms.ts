@@ -1,5 +1,5 @@
-import {IMovie} from "../types/IMovie";
+import {IFilm} from "../types/IFilm";
 
-export const deleteTrashFilms = (data: IMovie[] | undefined) => {
-    return data && data.filter(item => item.nameOriginal != null)
+export const deleteTrashFilms = (data?: IFilm[]) => {
+    return data?.filter(item => item.nameOriginal != null)
 }

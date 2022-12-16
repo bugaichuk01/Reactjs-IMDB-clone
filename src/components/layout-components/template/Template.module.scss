@@ -1,0 +1,36 @@
+.catalog {
+  height: 100%;
+}
+
+.container {
+  padding: 50px 40px;
+
+  @media (max-width: 768px) {
+    padding: 40px 15px 60px;
+  }
+}
+
+.body {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr 4fr;
+  gap: 20px 15px;
+
+  @media (max-width: 1024px) {
+    display: block;
+  }
+}
+
+.grid {
+  display: grid;
+
+  @media (max-width: 1024px) {
+    padding-top: 20px;
+    row-gap: 30px;
+  }
+
+  @media (max-width: 576px) {
+    row-gap: 25px;
+  }
+}

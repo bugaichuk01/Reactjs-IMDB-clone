@@ -1,15 +1,15 @@
 .info_btn {
-  margin-left: 10px;
   font-size: var(--type-bodyMedium-size);
+  z-index: 9999;
   align-items: center;
   display: flex;
-  margin-top: 1rem;
+
   svg {
+    box-sizing: content-box;
     border-radius: 50%;
     padding: 10px;
     cursor: pointer;
     transition: all .15s linear;
-    background: none;
 
     &:hover {
       background: rgba(255,255,255,.08);

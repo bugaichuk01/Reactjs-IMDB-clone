@@ -6,6 +6,7 @@ import {SearchList} from "../search-list/SearchList";
 import useDebounce from "_/useDebounce";
 import {useActions} from "_/useActions";
 import {useTypedSelector} from "_/useTypedSelector";
+import {Input} from "@/shared-components/input/Input";
 
 export const SearchInput = () => {
     const {setSearch, toggleSearch} = useActions();
@@ -28,20 +29,18 @@ export const SearchInput = () => {
 
     return (
         <>
-            <input
+            <Input
                 value={search}
-                onChange={handleChange}
-                type="search"
                 className={styles.search}
-                placeholder='Поиск...'
+                onChange={handleChange}
                 onClick={handleSearch}
             />
-                 <button
-                    className={cn(styles.closeBtn, debouncedValue && styles.active)}
-                    onClick={handleClearInput}
-                >
-                    <FiX />
-                </button>
+            <button
+                className={cn(styles.closeBtn, debouncedValue && styles.active)}
+                onClick={handleClearInput}
+            >
+                <FiX/>
+            </button>
             {isActive && <SearchList debouncedValue={debouncedValue}/>}
         </>
     );

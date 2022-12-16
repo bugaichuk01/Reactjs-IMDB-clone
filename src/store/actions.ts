@@ -1,9 +1,17 @@
 import {changeCurrentOption, toggleMenu} from "./reducers/dropDown.slice";
 import {setSearch, toggleSearch} from "./reducers/search.slice";
+import {setPage, setReviewsPage} from "./reducers/pagination.slice";
+import {setOrder, setType, setKeyword, setGenre} from "./reducers/filters.slice";
 
 export {
-    changeCurrentOption,
-    toggleMenu,
+    setPage,
+    setType,
+    setGenre,
+    setOrder,
     setSearch,
-    toggleSearch
+    setKeyword,
+    toggleMenu,
+    toggleSearch,
+    setReviewsPage,
+    changeCurrentOption
 }

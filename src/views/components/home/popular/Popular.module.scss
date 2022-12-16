@@ -3,36 +3,40 @@
   display: flex;
   align-items: end;
   justify-content: space-between;
+
+  @media (max-width: 340px) {
+    flex-direction: column;
+    align-items: start;
+  }
 }
 
 .btn_container {
-  width: 20%;
+  width: 15%;
 
   @media (max-width: 1024px) {
     width: 30%;
   }
+
+  @media (max-width: 340px) {
+    width: 45%;
+  }
 }
 
 .button {
-  color: var(--color-blue);
-  background: none;
+  width: 100%;
+  background: rgba(87, 153, 239, .12);
   margin-bottom: 18px;
-  opacity: 1;
+  color: var(--color-blue);
 
   @media (max-width: 768px) {
     margin-bottom: 10px;
   }
 
   &:hover {
-    background: rgba(87, 153, 239, .12);
-  }
-
-  svg {
-    margin: 0 !important;
+    background: rgba(87, 153, 239, .2);
   }
 }
 
 .title {
-  margin-right: 5px;
   white-space: nowrap;
 }

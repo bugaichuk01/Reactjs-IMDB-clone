@@ -50,14 +50,23 @@
 }
 
 .button {
-  width: 10%;
-  border: 2px solid var(--color-yellow);
+  width: 100px !important;
+  border: 2px solid var(--color-yellow) !important;
   background-color: var(--color-white);
+
+  @media (max-width: 340px) {
+    width: 100%;
+  }
 }
 
 .bottom {
   display: flex;
   justify-content: space-between;
+  align-items: end;
+
+  @media (max-width: 340px) {
+    flex-direction: column;
+  }
 }
 
 .buttons {
@@ -89,7 +98,8 @@
   span {
     color: var(--color-grey);
     display: flex;
-    align-items: center;
+    align-self: self-end;
+    padding-bottom: 8px;
   }
 
   &:first-child {

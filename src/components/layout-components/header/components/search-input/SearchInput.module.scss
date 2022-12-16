@@ -1,18 +1,6 @@
 .search {
-  min-height: 38px;
-  outline: none;
-  border: none;
-  width: 100%;
-  background: var(--color-white);
-  border-radius: 0 var(--content-radius) var(--content-radius) 0;
-  font-weight: var(--type-bodyMedium-weight);
-  color: var(--color-dark-grey);
-  font-size: var(--type-bodySmall-size);
-  padding-left: 10px;
-}
-
-input[type="search"]::-webkit-search-cancel-button {
-  display: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .closeBtn {

@@ -1,4 +1,4 @@
-export interface IMovie {
+export interface IFilm {
     completed?: boolean;
     countries: { country: string }[];
     coverUrl?: string;
@@ -44,3 +44,4 @@ export interface IMovie {
     webUrl: string;
     year?: number;
 }
+

@@ -4,18 +4,25 @@ import AliceCarousel from "react-alice-carousel";
 import {SliderButton} from "../slider-button/SliderButton";
 
 interface SliderTypes {
-    data: JSX.Element[] | undefined;
-    itemsNumber: number;
+    data?: JSX.Element[];
+    isRec?: boolean;
 }
 
-export const Slider: React.FC<SliderTypes> = ({data, itemsNumber}) => {
+export const Slider: React.FC<SliderTypes> = ({data, isRec}) => {
 
-    const responsive = {
+    const popular = {
         0: {items: 2},
         629: {items: 3},
         820: {items: 4},
         1024: {items: 5},
-        1200: {items: itemsNumber},
+        1200: {items: 6},
+    };
+
+    const recommendation = {
+        0: {items: 1},
+        820: {items: 2},
+        1024: {items: 2},
+        1200: {items: 3},
     };
 
     const renderPrevButton = () => <SliderButton style={styles.thumb_left} dir={'left'} />
@@ -28,9 +35,8 @@ export const Slider: React.FC<SliderTypes> = ({data, itemsNumber}) => {
                 mouseTracking
                 infinite={true}
                 paddingRight={10}
-                responsive={responsive}
+                responsive={isRec ? recommendation : popular }
                 disableDotsControls={true}
-                controlsStrategy="alternate"
                 renderPrevButton={renderPrevButton}
                 renderNextButton={renderNextButton}
             />

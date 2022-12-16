@@ -1,15 +1,17 @@
 .search_list_container {
   position: absolute;
   top: 64px;
-
   width: 100%;
   border-radius: var(--content-radius);
   text-align: start;
   padding: 0;
-  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.7);
   background: #1f1f1f;
   color: var(--color-white);
   font-size: var(--type-bodyRegular-size);
   font-weight: var(--type-bodyMedium-weight);
+
+  @media (max-width: 768px) {
+    left: 0;
+  }
 }
 

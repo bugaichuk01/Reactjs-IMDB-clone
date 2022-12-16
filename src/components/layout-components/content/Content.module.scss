@@ -1,10 +1,9 @@
 .loader {
+  box-sizing: content-box;
   padding: 100px;
   margin: 0 auto;
-  display: flex;
-  text-align: center;
-  align-items: center;
 }
+
 
 .no_results {
   padding: 40px;
@@ -13,4 +12,5 @@
   font-size: var(--type-bodyRegular-size);
   font-weight: var(--type-bodyRegular-weight);
 }
+
 

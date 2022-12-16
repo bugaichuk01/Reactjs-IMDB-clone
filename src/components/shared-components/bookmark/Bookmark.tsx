@@ -3,7 +3,7 @@ import styles from './Bookmark.module.scss';
 
 export const Bookmark = () => {
     return (
-        <div className={styles.flag}>
+        <div className={styles.bookmark}>
             <svg className={styles.ribbon} viewBox='0 0 24 34'>
                 <polygon className={styles.polygon} points="24 0 0 0 0 32 12.2436611 26.2926049 24 31.7728343"/>
             </svg>

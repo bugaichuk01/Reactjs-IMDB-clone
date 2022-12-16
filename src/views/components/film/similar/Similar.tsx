@@ -1,11 +1,11 @@
 import React from 'react';
 import {useGetSimilarQuery} from "_/serviceAPI";
-import {SimilarItem} from "../similar-item/SimilarItem";
 import {Slider} from "@/shared-components/slider/Slider";
 import {Caption} from "@/shared-components/caption/Caption";
+import {CardItem} from "@/layout-components/card-item/CardItem";
 
 interface SimilarProps {
-    id: number | undefined
+    id?: number
 }
 
 export const Similar: React.FC<SimilarProps> = ({id}) => {
@@ -13,22 +13,27 @@ export const Similar: React.FC<SimilarProps> = ({id}) => {
 
     return (
         <>
-            {data && data.total < 6
-                ? <Caption description={`К сожалению, мы не смогли найти достаточное количетсво похожих фильмов :(`}/>
+            {data && data?.total < 6
+                ? <Caption description='К сожалению, мы не смогли найти достаточное количетсво похожих фильмов :('/>
                 : (
                     <>
-                        <Caption description={`Вам также может понравиться`} title='Похожее кино'/>
+                        <Caption
+                            title='Похожее кино'
+                            description='Вам также может понравиться'
+                        />
 
-                        <Slider
-                            itemsNumber={6}
-                            data={data?.items?.map((item) => (
-                                <SimilarItem key={item.filmId} item={item}/>
-                            ))}
+                        <Slider data={data?.items?.map((item) =>
+                            <CardItem
+                                key={item.filmId}
+                                name={item.nameRu}
+                                src={item.posterUrl}
+                                link={`/film/${item.filmId}`}
+                            />
+                        )}
                         />
                     </>
                 )
             }
-
         </>
     );
 }

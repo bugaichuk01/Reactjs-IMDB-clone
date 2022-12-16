@@ -5,7 +5,7 @@ import {useOnClickOutside} from "usehooks-ts";
 import {useActions} from "_/useActions";
 import {useTypedSelector} from "_/useTypedSelector";
 import {useGetFilmsBySearchQuery} from "_/serviceAPI";
-import {IMovie} from "../../../../../types/IMovie";
+import {IFilm} from "../../../../../types/IFilm";
 import {ListItem} from "../list-item/ListItem";
 import {Content} from "../../../content/Content";
 
@@ -16,6 +16,7 @@ interface SearchListProps {
 export const SearchList: React.FC<SearchListProps> = ({debouncedValue}) => {
     const {toggleSearch} = useActions();
     const {currentOption} = useTypedSelector(state => state.dropDownReducer);
+
     const {data, isFetching, isLoading, refetch} = useGetFilmsBySearchQuery({
         type: currentOption.value,
         keyword: debouncedValue
@@ -30,9 +31,9 @@ export const SearchList: React.FC<SearchListProps> = ({debouncedValue}) => {
 
     return (
         <div ref={divRef} className={styles.search_list_container}>
-                <Content data={data} isLoading={isLoading} isFetching={isFetching}>
-                    {data?.items?.slice(0, 8).map((item: IMovie) => (
-                        <Link to={`film/${item.kinopoiskId}`} key={item.kinopoiskId}>
+                <Content data={data?.items} isLoading={isLoading} isFetching={isFetching}>
+                    {data?.items?.slice(0, 8).map((item: IFilm) => (
+                        <Link to={`film/${item.kinopoiskId}`} key={item.kinopoiskId} onClick={() =>toggleSearch(false)}>
                             <ListItem item={item}/>
                         </Link>
                     ))}

@@ -1,18 +1,22 @@
-* {
-  font-family: Nunito, 'sans-serif';
-}
-
 body {
-  background-color: var(--color-black);
   margin: 0;
   padding: 0;
+  line-height: 1;
+  font-family: Nunito, Tahoma, Verdana, sans-serif;
+  background-color: #101010;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .container {
   margin: 0 auto;
-  padding-left: var(--container-offset);
-  padding-right: var(--container-offset);
-  max-width: var(--container-width);
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: var(--content-width);
 }
 
 img {
@@ -21,7 +25,7 @@ img {
   object-fit: cover;
 }
 
-ul {
+ol, ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -31,3 +35,5 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+input { outline: none; }

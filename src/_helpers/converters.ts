@@ -5,7 +5,7 @@ class Converter {
      * @param {string | undefined} age
      * @return {string} 3 characters string
      */
-    static convertAgeLimit = (age: string | undefined) => {
+    static convertAgeLimit = (age?: string) => {
         return age?.slice(3) + '+';
     }
 
@@ -14,7 +14,7 @@ class Converter {
      * @param {number | undefined} price
      * @return {string} dollars price
      */
-    static convertPrice = (price: number | undefined) => {
+    static convertPrice = (price?: number) => {
         return String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
     }
 
@@ -32,7 +32,7 @@ class Converter {
      * @param {string | undefined} type
      * @return {string} converted string
      */
-    static convertBoxOffice = (type: string | undefined) => {
+    static convertBoxOffice = (type?: string) => {
         switch (type) {
             case 'USA':
                 return 'Сборы в США'
@@ -50,7 +50,7 @@ class Converter {
      * @param {string | undefined} type
      * @return {string} converted string
      */
-    static convertMovieType = (type: string | undefined) => {
+    static convertMovieType = (type?: string) => {
         switch (type) {
             case 'FILM':
                 return 'фильм'

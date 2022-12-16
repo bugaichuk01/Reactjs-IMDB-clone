@@ -1,5 +1,8 @@
 .rating_container {
   display: flex;
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
 }
 
 .rating_item {
@@ -27,6 +30,13 @@
     svg {
       color: var(--color-blue);
     }
+  }
+
+  @media (max-width: 576px) {
+    margin-right: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
 }

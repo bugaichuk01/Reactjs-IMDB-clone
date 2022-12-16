@@ -1,10 +1,10 @@
 import React from 'react';
 import converter from '_/converters';
 import styles from "./ListItem.module.scss";
-import {IMovie} from "../../../../../types/IMovie";
+import {IFilm} from "../../../../../types/IFilm";
 
 interface ListIteProps {
-    item: IMovie
+    item: IFilm
 }
 
 export const ListItem: React.FC<ListIteProps> = ({item}) => {

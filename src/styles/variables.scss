@@ -1,9 +1,8 @@
 :root {
   // base
   --font-family: "Fira sans", sans-serif;
-  --content-width: 1230px;
+  --content-width: 1320px;
   --container-offset: 15px;
-  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
   --content-radius: 5px;
 
   //font-line-height
@@ -22,10 +21,15 @@
   --type-bodyBlack-weight: 900;
 
   //font-size
+  --type-bodyTiny-size: 0.75rem;
   --type-bodySmall-size: 0.875rem;
   --type-bodyRegular-size: 1rem;
   --type-bodyMedium-size: 1.5rem;
   --type-bodyBig-size: 2rem;
+  --type-bodyHuge-size: 2.5rem;
+
+  //margin
+  --margin-Regular: 1rem;
 
   // colors
   --color-white: #fff;

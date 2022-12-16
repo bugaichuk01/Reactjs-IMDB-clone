@@ -39,7 +39,8 @@
   position: relative;
   width: 50%;
 
-  @media (max-width: 576px) {
+  @media (max-width: 768px) {
     width: 70%;
+    position: initial;
   }
 }

@@ -1,80 +1,26 @@
-.list_item {
-  color: var(--color-white);
-  background-color: var(--color-light-dark);
-  border-radius: 0 0 var(--content-radius) var(--content-radius);
-  padding-bottom: var(--type-bodyRegular-size);
-  margin-right: 10px;
-  list-style: none;
+.footer {
+  padding: 0 10px;
 }
 
-.image {
-  display: block;
-  height: 300px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.icon {
-  color: var(--color-yellow);
-  font-size: var(--type-bodyRegular-size);
-  margin-right: 0.4em;
-}
-
-.rating_group {
-  display: flex;
-  align-items: center;
-  position: relative;
-  min-height: 36px;
-  margin-bottom: 0.25rem;
-}
-
-.rating {
-  color: #ffffffb3;
-  font-weight: var(--type-bodyMedium-weight);
-  font-size: var(--type-bodySmall-size);
-}
-
-.bottom {
-  padding: 0 0.5rem;
-}
-
-.name {
-  min-height: 44px;
-  display: block;
-  text-align: start;
-  font-size: var(--type-bodyRegular-size);
-  font-weight: var(--type-bodyRegular-weight);
-  -webkit-line-clamp: 2;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+.btn_group {
+  padding: 0 10px 10px;
 }
 
 .film_info {
   display: flex;
   align-items: center;
+  margin-top: 10px;
 
   @media (max-width: 430px) {
     display: none;
   }
 }
 
-.watchlist_btn {
-  color: var(--color-blue);
-  background: rgba(255, 255, 255, .08);
-
-  @media (max-width: 430px) {
-    display: none !important;
-  }
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.22);
-  }
-}
-
 .trailer_btn {
+  width: 100%;
   color: var(--color-white);
   background: none;
+  margin-right: 10px;
 
   &:hover {
     background: rgba(255, 255, 255, .08);

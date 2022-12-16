@@ -3,9 +3,9 @@ import {FaStar} from "react-icons/fa";
 import styles from './Rating.module.scss'
 
 interface RatingTypes {
-    ratingKinopoisk: number | undefined;
-    ratingImdb: number | undefined;
-    ratingGoodReview: number | undefined
+    ratingKinopoisk?: number;
+    ratingImdb?: number;
+    ratingGoodReview?: number;
 }
 
 

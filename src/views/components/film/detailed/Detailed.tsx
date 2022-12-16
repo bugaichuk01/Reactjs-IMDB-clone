@@ -1,5 +1,5 @@
 import React from "react";
-import styles from './FilmInfo.module.scss'
+import styles from './Detailed.module.scss'
 
 type FilmInfoItem = {
     caption: string;
@@ -8,10 +8,10 @@ type FilmInfoItem = {
 }
 
 interface FilmInfoTypes {
-    items: FilmInfoItem[] | undefined;
+    items?: FilmInfoItem[];
 }
 
-export const FilmInfo: React.FC<FilmInfoTypes> = ({items}) => {
+export const Detailed: React.FC<FilmInfoTypes> = ({items}) => {
 
     return (
         <ul className='list'>

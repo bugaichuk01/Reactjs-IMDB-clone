@@ -3,15 +3,12 @@ export interface ISearchQuery {
     keyword: string;
 }
 
-export interface IParams {
-    id: number | undefined;
+export interface IQueryParams {
+    id?: number;
     text?: string;
     page?: number;
-}
-
-export interface IBaseQuery<T> {
-    items?: T[];
-    films?: T[];
-    total: number;
-    totalPage?: number;
+    order?: string;
+    type?: string;
+    keyword?: string;
+    genre?: string;
 }
